@@ -5,9 +5,9 @@ export const services: Service[] = [
   {
     id: 'data-pipelines',
     title: 'Data Pipeline Development',
-    description: `I build scalable, reliable data pipelines from scratch using modern tools like
+    description: `We build scalable, reliable data pipelines from scratch using modern tools like
       Apache Airflow, AWS, and Python. Whether you need real-time streaming or batch processing,
-      I design architectures that handle millions of records while maintaining data quality and
+      we design architectures that handle millions of records while maintaining data quality and
       comprehensive monitoring.`,
     icon: Database,
     features: [
@@ -22,7 +22,7 @@ export const services: Service[] = [
     id: 'workflow-automation',
     title: 'Workflow Automation',
     description: `Automate repetitive tasks and business processes to save time and reduce errors.
-      I create custom automation solutions that integrate with your existing tools, from simple
+      We create custom automation solutions that integrate with your existing tools, from simple
       scripts to complex orchestrated workflows, freeing your team to focus on high-value work.`,
     icon: Workflow,
     features: [
@@ -36,7 +36,7 @@ export const services: Service[] = [
   {
     id: 'system-integration',
     title: 'System Integration',
-    description: `Connect disparate systems and data sources seamlessly. I specialize in building
+    description: `Connect disparate systems and data sources seamlessly. We specialize in building
       robust integrations between databases, APIs, and third-party services, ensuring your data
       flows smoothly across your entire technology stack with proper error handling and monitoring.`,
     icon: Zap,
@@ -51,7 +51,7 @@ export const services: Service[] = [
   {
     id: 'custom-solutions',
     title: 'Custom Solutions',
-    description: `Every business has unique needs. I develop tailored software solutions that
+    description: `Every business has unique needs. We develop tailored software solutions that
       address your specific challenges, from custom dashboards and internal tools to specialized
       data processing applications. Full-stack capabilities ensure end-to-end solution delivery.`,
     icon: Code,

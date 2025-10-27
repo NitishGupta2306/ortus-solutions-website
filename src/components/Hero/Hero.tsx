@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '@/components/common/Button'
 import { TypingAnimation } from '@/components/common/TypingAnimation'
-import { personalInfo } from '@/data/personal'
+import { companyInfo } from '@/data/company'
 import { scrollToSection } from '@/utils/navigation'
 import { HeroBackground3D } from './HeroBackground3D'
 import { Suspense } from 'react'
@@ -42,7 +42,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            {personalInfo.title}
+            {companyInfo.name}
           </motion.p>
 
           <motion.h1
@@ -51,7 +51,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            {personalInfo.tagline}
+            {companyInfo.tagline}
           </motion.h1>
 
           <motion.p
@@ -62,10 +62,10 @@ export function Hero() {
           >
             <TypingAnimation
               texts={[
-                'Building custom data pipelines that scale',
-                'Automating workflows that save hours daily',
-                'Processing millions of records with confidence',
-                'Turning data chaos into actionable insights'
+                'We build custom data pipelines that scale',
+                'We automate workflows that save hours daily',
+                'We process millions of records with confidence',
+                'We turn data chaos into actionable insights'
               ]}
               typingSpeed={80}
               deletingSpeed={40}
@@ -90,9 +90,9 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => scrollToSection('#work')}
+              onClick={() => scrollToSection('#projects')}
             >
-              View My Work
+              View Our Work
             </Button>
           </motion.div>
         </motion.div>

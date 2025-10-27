@@ -11,7 +11,7 @@ export function Process() {
       <Container>
         <SlideUp>
           <SectionHeading centered subtitle="A transparent, collaborative approach to building your solution">
-            How I Work
+            How We Work
           </SectionHeading>
         </SlideUp>
 

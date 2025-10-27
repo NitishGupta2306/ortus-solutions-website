@@ -1,9 +1,9 @@
 // App-wide constants
 
 export const SITE_NAME = 'Ortus Solutions'
-export const SITE_TAGLINE = 'Data Pipelines & Automation Specialist'
+export const SITE_TAGLINE = 'Expert Data Engineering & Cloud Solutions'
 export const SITE_DESCRIPTION =
-  'Solo consultant specializing in building data pipelines and automation solutions from zero.'
+  'Three senior data engineers specializing in building scalable data pipelines and automation solutions.'
 
 // Contact
 export const CONTACT_EMAIL = 'contact@ortussolutions.com' // Update with your actual email
@@ -20,8 +20,9 @@ export const SOCIAL_LINKS = {
 // Navigation
 export const NAV_ITEMS = [
   { label: 'About', href: '#about' },
+  { label: 'Team', href: '#team' },
   { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Process', href: '#process' },
   { label: 'Contact', href: '#contact' },
 ]

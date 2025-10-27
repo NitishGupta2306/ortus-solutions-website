@@ -2,9 +2,10 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import { Header } from './components/common/Header'
 import { Footer } from './components/common/Footer'
 import { Hero } from './components/Hero/Hero'
-import { About } from './components/About/About'
+import { CompanyAbout } from './components/About/CompanyAbout'
+import { Team } from './components/Team/Team'
 import { Services } from './components/Services/Services'
-import { Portfolio } from './components/Portfolio/Portfolio'
+import { ProjectsGallery } from './components/Projects/ProjectsGallery'
 import { Testimonial } from './components/Testimonial/Testimonial'
 import { Process } from './components/Process/Process'
 import { TechStack } from './components/TechStack/TechStack'
@@ -22,9 +23,10 @@ function App() {
 
         <main id="main-content">
           <Hero />
-          <About />
+          <CompanyAbout />
+          <Team />
           <Services />
-          <Portfolio />
+          <ProjectsGallery />
           <Testimonial />
           <Process />
           <TechStack />

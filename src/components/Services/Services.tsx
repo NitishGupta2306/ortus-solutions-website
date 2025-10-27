@@ -67,7 +67,7 @@ export function Services() {
       <Container>
         <SlideUp>
           <SectionHeading centered subtitle="Comprehensive solutions for your data infrastructure needs">
-            What I Do
+            What We Do
           </SectionHeading>
         </SlideUp>
 
