@@ -12,7 +12,7 @@ export function About() {
           {/* Photo */}
           <FadeIn>
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-cyan-500/20">
+              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent-light/20">
                 <img
                   src={personalInfo.photo}
                   alt={personalInfo.name}

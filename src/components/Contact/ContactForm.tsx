@@ -22,8 +22,6 @@ export function ContactForm() {
 
     try {
       // TODO: Implement actual form submission (EmailJS, Formspree, or custom API)
-      console.log('Form data:', data)
-
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000))
 
@@ -33,7 +31,9 @@ export function ContactForm() {
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000)
     } catch (error) {
-      console.error('Form submission error:', error)
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Form submission error:', error)
+      }
       setSubmitStatus('error')
 
       // Reset error message after 5 seconds
@@ -52,11 +52,15 @@ export function ContactForm() {
           {...register('name')}
           type="text"
           id="name"
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? 'name-error' : undefined}
           className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
           placeholder="Your name"
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.name.message}</p>
+          <p id="name-error" role="alert" className="mt-1 text-sm text-error dark:text-error-light">
+            {errors.name.message}
+          </p>
         )}
       </div>
 
@@ -69,11 +73,15 @@ export function ContactForm() {
           {...register('email')}
           type="email"
           id="email"
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? 'email-error' : undefined}
           className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
           placeholder="your.email@example.com"
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
+          <p id="email-error" role="alert" className="mt-1 text-sm text-error dark:text-error-light">
+            {errors.email.message}
+          </p>
         )}
       </div>
 
@@ -100,11 +108,15 @@ export function ContactForm() {
           {...register('message')}
           id="message"
           rows={5}
+          aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? 'message-error' : undefined}
           className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
           placeholder="Tell me about your project and what you need help with..."
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message.message}</p>
+          <p id="message-error" role="alert" className="mt-1 text-sm text-error dark:text-error-light">
+            {errors.message.message}
+          </p>
         )}
       </div>
 
@@ -121,7 +133,7 @@ export function ContactForm() {
 
       {/* Success Message */}
       {submitStatus === 'success' && (
-        <div className="flex items-center gap-2 p-4 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-lg">
+        <div className="flex items-center gap-2 p-4 bg-success-bg dark:bg-success-bg-dark text-success dark:text-success-light rounded-lg" role="alert">
           <CheckCircle className="w-5 h-5 flex-shrink-0" />
           <p className="text-sm">
             Message sent successfully! I'll get back to you within 24 hours.
@@ -131,7 +143,7 @@ export function ContactForm() {
 
       {/* Error Message */}
       {submitStatus === 'error' && (
-        <div className="flex items-center gap-2 p-4 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 rounded-lg">
+        <div className="flex items-center gap-2 p-4 bg-error-bg dark:bg-error-bg-dark text-error dark:text-error-light rounded-lg" role="alert">
           <XCircle className="w-5 h-5 flex-shrink-0" />
           <p className="text-sm">
             Something went wrong. Please try again or email me directly.

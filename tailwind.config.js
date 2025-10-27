@@ -16,6 +16,22 @@ export default {
           DEFAULT: '#06B6D4',
           light: '#22D3EE',
           dark: '#0891B2',
+          subtle: '#ECFEFF', // cyan-50 equivalent
+        },
+        error: {
+          DEFAULT: '#DC2626', // red-600
+          light: '#F87171', // red-400
+          bg: '#FEF2F2', // red-50
+          'bg-dark': '#7F1D1D', // red-900
+        },
+        success: {
+          DEFAULT: '#16A34A', // green-600
+          light: '#4ADE80', // green-400
+          bg: '#F0FDF4', // green-50
+          'bg-dark': '#14532D', // green-900
+        },
+        warning: {
+          DEFAULT: '#FBBF24', // yellow-400 (for sun icon)
         },
       },
       fontFamily: {

@@ -4,6 +4,7 @@ import { Button } from './Button'
 import { ThemeToggle } from './ThemeToggle'
 import { NAV_ITEMS, SITE_NAME } from '@/utils/constants'
 import { cn } from '@/utils/cn'
+import { scrollToSection as scrollToSectionUtil } from '@/utils/navigation'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -20,10 +21,7 @@ export function Header() {
 
   const scrollToSection = (href: string) => {
     setIsMobileMenuOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    scrollToSectionUtil(href)
   }
 
   return (

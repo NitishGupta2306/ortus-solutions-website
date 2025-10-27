@@ -2,19 +2,14 @@ import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '@/components/common/Button'
 import { personalInfo } from '@/data/personal'
+import { scrollToSection } from '@/utils/navigation'
 
 export function Hero() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-cyan-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-accent-subtle dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
         {/* Animated gradient orbs */}
         <motion.div
@@ -30,7 +25,7 @@ export function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"
+          className="absolute bottom-20 right-20 w-96 h-96 bg-accent-light/20 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.5, 0.3, 0.5],

@@ -25,7 +25,7 @@ export function Testimonial() {
               {/* Author Info */}
               <div className="flex items-center gap-4">
                 {testimonial.image && (
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-accent/20 to-cyan-500/20">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-accent/20 to-accent-light/20">
                     <img
                       src={testimonial.image}
                       alt={testimonial.author}

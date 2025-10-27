@@ -34,10 +34,10 @@ export function TechStack() {
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     {categoryTech.map((tech, techIndex) => (
                       <FadeIn key={tech.name} delay={0.05 * techIndex}>
-                        <div className="group flex flex-col items-center p-4 bg-white dark:bg-slate-800 rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-slate-200 dark:border-slate-700">
+                        <div className="group flex flex-col items-center p-4 bg-white dark:bg-slate-800 rounded-lg hover:shadow-lg hover:-translate-y-1 transition-[transform,box-shadow] duration-300 border border-slate-200 dark:border-slate-700">
                           <div className="w-12 h-12 mb-3 flex items-center justify-center">
                             {/* Placeholder for tech logo */}
-                            <div className="w-full h-full bg-gradient-to-br from-accent/20 to-cyan-500/20 rounded-lg flex items-center justify-center text-accent dark:text-accent-light font-bold text-xs">
+                            <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-lg flex items-center justify-center text-accent dark:text-accent-light font-bold text-xs">
                               {tech.name.substring(0, 2).toUpperCase()}
                             </div>
                           </div>

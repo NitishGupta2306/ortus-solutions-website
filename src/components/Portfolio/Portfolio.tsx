@@ -24,7 +24,7 @@ export function Portfolio() {
           <Card className="overflow-hidden">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Project Image */}
-              <div className="relative aspect-video md:aspect-square bg-gradient-to-br from-accent/20 to-cyan-500/20 rounded-lg overflow-hidden">
+              <div className="relative aspect-video md:aspect-square bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-lg overflow-hidden">
                 <img
                   src={featuredProject.images[0]}
                   alt={featuredProject.title}

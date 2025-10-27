@@ -1,15 +1,9 @@
 import { Linkedin, Github, Twitter, Mail } from 'lucide-react'
 import { SITE_NAME, SOCIAL_LINKS, NAV_ITEMS } from '@/utils/constants'
+import { scrollToSection } from '@/utils/navigation'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   const socialIcons = [
     { icon: Linkedin, href: SOCIAL_LINKS.linkedin, label: 'LinkedIn' },
