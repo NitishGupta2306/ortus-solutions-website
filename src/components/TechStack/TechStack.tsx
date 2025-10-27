@@ -3,6 +3,7 @@ import { Section } from '@/components/common/Section'
 import { Container } from '@/components/common/Container'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { SlideUp } from '@/components/common/SlideUp'
+import { SkillLevel } from '@/components/common/SkillLevel'
 import { technologies, techCategories } from '@/data/techStack'
 import { useGSAP } from '@/hooks/useGSAP'
 
@@ -88,9 +89,12 @@ export function TechStack() {
                           {tech.name.substring(0, 2).toUpperCase()}
                         </div>
                       </div>
-                      <p className="text-sm font-medium text-slate-700 dark:text-slate-300 text-center group-hover:text-accent dark:group-hover:text-accent-light transition-colors">
+                      <p className="text-sm font-medium text-slate-700 dark:text-slate-300 text-center group-hover:text-accent dark:group-hover:text-accent-light transition-colors mb-2">
                         {tech.name}
                       </p>
+                      {tech.level && (
+                        <SkillLevel level={tech.level} />
+                      )}
                     </div>
                   ))}
                 </div>

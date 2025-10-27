@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react'
 import { Section } from '@/components/common/Section'
 import { Container } from '@/components/common/Container'
 import { SlideUp } from '@/components/common/SlideUp'
+import { AnimatedCounter } from '@/components/common/AnimatedCounter'
 import { personalInfo } from '@/data/personal'
 import { useGSAP } from '@/hooks/useGSAP'
 import { handleImageError } from '@/utils/image'
@@ -120,12 +121,14 @@ export function About() {
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div>
                   <p className="text-3xl font-bold text-accent dark:text-accent-light">
-                    {personalInfo.yearsOfExperience}+
+                    <AnimatedCounter end={personalInfo.yearsOfExperience} suffix="+" />
                   </p>
                   <p className="text-slate-600 dark:text-slate-400">Years Experience</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-accent dark:text-accent-light">20+</p>
+                  <p className="text-3xl font-bold text-accent dark:text-accent-light">
+                    <AnimatedCounter end={20} suffix="+" />
+                  </p>
                   <p className="text-slate-600 dark:text-slate-400">Projects Completed</p>
                 </div>
               </div>

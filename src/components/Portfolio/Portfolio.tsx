@@ -29,7 +29,7 @@ export function Portfolio() {
 
         {/* Featured Project */}
         <SlideUp delay={0.2}>
-          <Card className="overflow-hidden">
+          <Card glass className="overflow-hidden">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Project Image */}
               <div

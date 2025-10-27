@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { contactFormSchema, ContactFormData } from '@/utils/validation'
 import { Button } from '@/components/common/Button'
-import { CheckCircle, XCircle } from 'lucide-react'
+import { CheckCircle, XCircle, Loader2 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -125,32 +126,62 @@ export function ContactForm() {
       <Button
         type="submit"
         size="lg"
-        className="w-full"
+        className="w-full relative overflow-hidden"
         isLoading={submitStatus === 'loading'}
         disabled={submitStatus === 'loading'}
       >
-        {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
+        <span className="flex items-center justify-center gap-2">
+          {submitStatus === 'loading' && (
+            <Loader2 className="w-5 h-5 animate-spin" />
+          )}
+          {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
+        </span>
       </Button>
 
-      {/* Success Message */}
-      {submitStatus === 'success' && (
-        <div className="flex items-center gap-2 p-4 bg-success-bg dark:bg-success-bg-dark text-success dark:text-success-light rounded-lg" role="alert">
-          <CheckCircle className="w-5 h-5 flex-shrink-0" />
-          <p className="text-sm">
-            Message sent successfully! I'll get back to you within 24 hours.
-          </p>
-        </div>
-      )}
+      {/* Success/Error Messages with animations */}
+      <AnimatePresence mode="wait">
+        {submitStatus === 'success' && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            className="flex items-center gap-2 p-4 bg-success-bg dark:bg-success-bg-dark text-success dark:text-success-light rounded-lg"
+            role="alert"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            >
+              <CheckCircle className="w-5 h-5 flex-shrink-0" />
+            </motion.div>
+            <p className="text-sm">
+              Message sent successfully! I'll get back to you within 24 hours.
+            </p>
+          </motion.div>
+        )}
 
-      {/* Error Message */}
-      {submitStatus === 'error' && (
-        <div className="flex items-center gap-2 p-4 bg-error-bg dark:bg-error-bg-dark text-error dark:text-error-light rounded-lg" role="alert">
-          <XCircle className="w-5 h-5 flex-shrink-0" />
-          <p className="text-sm">
-            Something went wrong. Please try again or email me directly.
-          </p>
-        </div>
-      )}
+        {submitStatus === 'error' && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            className="flex items-center gap-2 p-4 bg-error-bg dark:bg-error-bg-dark text-error dark:text-error-light rounded-lg"
+            role="alert"
+          >
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ delay: 0.2, type: "spring" }}
+            >
+              <XCircle className="w-5 h-5 flex-shrink-0" />
+            </motion.div>
+            <p className="text-sm">
+              Something went wrong. Please try again or email me directly.
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </form>
   )
 }

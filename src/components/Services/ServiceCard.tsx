@@ -17,7 +17,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
 
   return (
     <div ref={cardRef} className="h-full">
-      <Card hover className="h-full relative overflow-hidden">
+      <Card hover glass className="h-full relative overflow-hidden">
         {/*
           Glare effect - more visible
           Note: Inline style required here because CSS custom properties (--glare-x, --glare-y)

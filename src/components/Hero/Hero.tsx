@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '@/components/common/Button'
+import { TypingAnimation } from '@/components/common/TypingAnimation'
 import { personalInfo } from '@/data/personal'
 import { scrollToSection } from '@/utils/navigation'
 import { HeroBackground3D } from './HeroBackground3D'
@@ -54,13 +55,22 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl mx-auto min-h-[4rem] flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Solo consultant specializing in custom data solutions. I help businesses build scalable
-            pipelines and automations that process millions of records daily.
+            <TypingAnimation
+              texts={[
+                'Building custom data pipelines that scale',
+                'Automating workflows that save hours daily',
+                'Processing millions of records with confidence',
+                'Turning data chaos into actionable insights'
+              ]}
+              typingSpeed={80}
+              deletingSpeed={40}
+              pauseDuration={2500}
+            />
           </motion.p>
 
           <motion.div

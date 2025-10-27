@@ -51,6 +51,7 @@ export interface Technology {
   name: string
   category: TechnologyCategory
   logo: string
+  level?: 'beginner' | 'intermediate' | 'advanced' | 'expert'
 }
 
 export type TechnologyCategory =
