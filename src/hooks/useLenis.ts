@@ -16,12 +16,12 @@ export function useLenis() {
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      smoothTouch: false, // Disable on touch devices for better performance
+      // Note: smoothTouch removed in Lenis v1.3+ - touch scrolling is automatically optimized
       touchMultiplier: 2,
     })
 
     // Expose Lenis instance globally for scrollToSection utility
-    ;(window as any).lenis = lenis
+    window.lenis = lenis
 
     // Sync Lenis with GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update)
@@ -37,7 +37,7 @@ export function useLenis() {
     // Cleanup
     return () => {
       lenis.destroy()
-      delete (window as any).lenis
+      delete window.lenis
     }
   }, [])
 }

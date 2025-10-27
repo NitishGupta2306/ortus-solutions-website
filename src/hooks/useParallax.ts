@@ -18,13 +18,16 @@ export function useParallax(ref: RefObject<HTMLElement>, options: ParallaxOption
   useEffect(() => {
     if (!ref.current) return
 
+    // Respect user's motion preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
     const element = ref.current
 
+    const movement = (speed - 1) * 100
+
     gsap.to(element, {
-      [direction === 'vertical' ? 'y' : 'x']: (i, target) => {
-        const movement = (speed - 1) * 100
-        return movement
-      },
+      [direction === 'vertical' ? 'y' : 'x']: movement,
       ease: 'none',
       scrollTrigger: {
         trigger: element,

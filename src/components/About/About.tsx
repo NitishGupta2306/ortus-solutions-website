@@ -2,7 +2,6 @@ import { useRef, useEffect } from 'react'
 import { Section } from '@/components/common/Section'
 import { Container } from '@/components/common/Container'
 import { SlideUp } from '@/components/common/SlideUp'
-import { FadeIn } from '@/components/common/FadeIn'
 import { personalInfo } from '@/data/personal'
 import { useGSAP } from '@/hooks/useGSAP'
 
@@ -14,8 +13,12 @@ export function About() {
   useEffect(() => {
     if (!imageRef.current || !contentRef.current) return
 
+    // Respect user's motion preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
     // Image zoom and rotate effect - much more dramatic
-    gsap.fromTo(
+    const imageTween = gsap.fromTo(
       imageRef.current,
       {
         scale: 0.5,
@@ -42,7 +45,7 @@ export function About() {
 
     // Content paragraphs stagger with more dramatic entrance
     const paragraphs = contentRef.current.querySelectorAll('p')
-    gsap.fromTo(
+    const contentTween = gsap.fromTo(
       paragraphs,
       {
         x: 100,
@@ -65,6 +68,12 @@ export function About() {
         },
       }
     )
+
+    // Cleanup function to kill all ScrollTriggers
+    return () => {
+      imageTween.scrollTrigger?.kill()
+      contentTween.scrollTrigger?.kill()
+    }
   }, [gsap, ScrollTrigger])
 
   return (

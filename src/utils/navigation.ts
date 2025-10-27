@@ -11,7 +11,7 @@ export function scrollToSection(href: string): void {
   const headerHeight = 80
 
   // Try to use Lenis if available (via window.lenis)
-  const lenis = (window as any).lenis
+  const lenis = window.lenis
   if (lenis && typeof lenis.scrollTo === 'function') {
     // For Lenis, we need to scroll to the element's position minus the header
     const elementPosition = element.getBoundingClientRect().top + window.scrollY

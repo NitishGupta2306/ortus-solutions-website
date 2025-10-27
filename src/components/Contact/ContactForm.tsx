@@ -17,11 +17,12 @@ export function ContactForm() {
     resolver: zodResolver(contactFormSchema),
   })
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (_data: ContactFormData) => {
     setSubmitStatus('loading')
 
     try {
       // TODO: Implement actual form submission (EmailJS, Formspree, or custom API)
+      // For now, data is unused until we implement the actual submission
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000))
 
@@ -31,7 +32,7 @@ export function ContactForm() {
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000)
     } catch (error) {
-      if (process.env.NODE_ENV === 'development') {
+      if (import.meta.env.DEV) {
         console.error('Form submission error:', error)
       }
       setSubmitStatus('error')

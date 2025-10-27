@@ -13,12 +13,17 @@ export function TechStack() {
   useEffect(() => {
     if (!stackRef.current) return
 
+    // Respect user's motion preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
     const categories = stackRef.current.querySelectorAll('.tech-category')
+    const tweens: gsap.core.Tween[] = []
 
     categories.forEach((category) => {
       const logos = category.querySelectorAll('.tech-logo')
 
-      gsap.fromTo(
+      const tween = gsap.fromTo(
         logos,
         {
           scale: 0,
@@ -41,7 +46,13 @@ export function TechStack() {
           },
         }
       )
+      tweens.push(tween)
     })
+
+    // Cleanup function to kill all ScrollTriggers
+    return () => {
+      tweens.forEach(tween => tween.scrollTrigger?.kill())
+    }
   }, [gsap, ScrollTrigger])
 
   return (

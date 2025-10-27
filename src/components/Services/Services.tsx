@@ -14,13 +14,18 @@ export function Services() {
   useEffect(() => {
     if (!cardsRef.current) return
 
+    // Respect user's motion preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+
     const cards = cardsRef.current.querySelectorAll('.service-card')
+    const triggers: gsap.core.Tween[] = []
 
     cards.forEach((card, index) => {
       // Alternate between left and right with larger movement
       const direction = index % 2 === 0 ? -200 : 200
 
-      gsap.fromTo(
+      const tween = gsap.fromTo(
         card,
         {
           x: direction,
@@ -48,7 +53,13 @@ export function Services() {
           },
         }
       )
+      triggers.push(tween)
     })
+
+    // Cleanup function to kill all ScrollTriggers
+    return () => {
+      triggers.forEach(tween => tween.scrollTrigger?.kill())
+    }
   }, [gsap, ScrollTrigger])
 
   return (
