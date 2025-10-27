@@ -23,44 +23,24 @@ export function TechStack() {
         {
           scale: 0,
           opacity: 0,
-          rotateY: 360,
-          rotateZ: 180,
-          y: 100,
+          rotateY: 180,
+          y: 50,
         },
         {
           scale: 1,
           opacity: 1,
           rotateY: 0,
-          rotateZ: 0,
           y: 0,
-          duration: 0.8,
-          stagger: {
-            amount: 0.6,
-            from: 'random'
-          },
-          ease: 'elastic.out(1, 0.6)',
+          duration: 0.4,
+          stagger: 0.02,
+          ease: 'back.out(2)',
           scrollTrigger: {
             trigger: category,
-            start: 'top 80%',
-            end: 'top 30%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           },
         }
       )
-
-      // Add a pulsing effect on each logo
-      logos.forEach((logo) => {
-        gsap.to(logo, {
-          scale: 1.05,
-          duration: 0.3,
-          ease: 'power1.inOut',
-          scrollTrigger: {
-            trigger: logo,
-            start: 'top 70%',
-            toggleActions: 'play reverse play reverse',
-          },
-        })
-      })
     })
   }, [gsap, ScrollTrigger])
 
