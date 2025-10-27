@@ -40,6 +40,8 @@ export function Portfolio() {
                   src={featuredProject.images[0]}
                   alt={featuredProject.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                   onError={handleImageError('Project Image', 800, 600)}
                 />
               </div>

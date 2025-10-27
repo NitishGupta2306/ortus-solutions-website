@@ -27,3 +27,67 @@ export function handleImageError(
     e.currentTarget.src = getPlaceholderImage(fallbackText, width, height)
   }
 }
+
+/**
+ * Lazy loads an image when it enters the viewport
+ * Uses Intersection Observer API for performance
+ * @param imgElement - The image element to lazy load
+ */
+export function lazyLoadImage(imgElement: HTMLImageElement): void {
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement
+          const dataSrc = img.getAttribute('data-src')
+          if (dataSrc) {
+            img.src = dataSrc
+            img.removeAttribute('data-src')
+          }
+          observer.unobserve(img)
+        }
+      })
+    }, {
+      rootMargin: '50px' // Start loading 50px before image enters viewport
+    })
+
+    observer.observe(imgElement)
+  } else {
+    // Fallback for browsers without Intersection Observer
+    const dataSrc = imgElement.getAttribute('data-src')
+    if (dataSrc) {
+      imgElement.src = dataSrc
+      imgElement.removeAttribute('data-src')
+    }
+  }
+}
+
+/**
+ * Common image props for optimized loading
+ * @param src - Image source URL
+ * @param alt - Alt text for accessibility
+ * @param lazy - Whether to enable lazy loading (default: true)
+ * @returns Object with optimized image props
+ */
+export function getOptimizedImageProps(src: string, alt: string, lazy = true): {
+  src?: string
+  'data-src'?: string
+  alt: string
+  loading?: 'lazy' | 'eager'
+  decoding?: 'async'
+} {
+  if (lazy) {
+    return {
+      'data-src': src,
+      alt,
+      loading: 'lazy',
+      decoding: 'async'
+    }
+  }
+
+  return {
+    src,
+    alt,
+    loading: 'eager'
+  }
+}

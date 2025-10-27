@@ -89,6 +89,8 @@ export function About() {
                   src={personalInfo.photo}
                   alt={personalInfo.name}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                   onError={handleImageError('Your Photo', 600, 600)}
                 />
               </div>
