@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Section } from '@/components/common/Section'
 import { Container } from '@/components/common/Container'
 import { SectionHeading } from '@/components/common/SectionHeading'
@@ -5,8 +6,14 @@ import { SlideUp } from '@/components/common/SlideUp'
 import { Card } from '@/components/common/Card'
 import { featuredProject } from '@/data/project'
 import { ExternalLink, TrendingUp } from 'lucide-react'
+import { useParallax } from '@/hooks/useParallax'
 
 export function Portfolio() {
+  const imageRef = useRef<HTMLDivElement>(null)
+
+  // Apply subtle parallax to project image
+  useParallax(imageRef, { speed: 0.3 })
+
   return (
     <Section id="work" background="white">
       <Container>
@@ -24,7 +31,10 @@ export function Portfolio() {
           <Card className="overflow-hidden">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Project Image */}
-              <div className="relative aspect-video md:aspect-square bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-lg overflow-hidden">
+              <div
+                ref={imageRef}
+                className="relative aspect-video md:aspect-square bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-lg overflow-hidden"
+              >
                 <img
                   src={featuredProject.images[0]}
                   alt={featuredProject.title}

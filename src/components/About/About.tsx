@@ -1,16 +1,63 @@
+import { useRef, useEffect } from 'react'
 import { Section } from '@/components/common/Section'
 import { Container } from '@/components/common/Container'
 import { SlideUp } from '@/components/common/SlideUp'
 import { FadeIn } from '@/components/common/FadeIn'
 import { personalInfo } from '@/data/personal'
+import { useGSAP } from '@/hooks/useGSAP'
 
 export function About() {
+  const imageRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const { gsap, ScrollTrigger } = useGSAP()
+
+  useEffect(() => {
+    if (!imageRef.current || !contentRef.current) return
+
+    // Image zoom effect
+    gsap.fromTo(
+      imageRef.current,
+      { scale: 0.8, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: 'top 70%',
+          end: 'top 30%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    )
+
+    // Content paragraphs stagger fade
+    const paragraphs = contentRef.current.querySelectorAll('p')
+    gsap.fromTo(
+      paragraphs,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: contentRef.current,
+          start: 'top 70%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    )
+  }, [gsap, ScrollTrigger])
+
   return (
     <Section id="about" background="white">
       <Container>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Photo */}
-          <FadeIn>
+          <div ref={imageRef}>
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent-light/20">
                 <img
@@ -26,10 +73,10 @@ export function About() {
               {/* Decorative element */}
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-full blur-2xl -z-10" />
             </div>
-          </FadeIn>
+          </div>
 
           {/* Content */}
-          <div>
+          <div ref={contentRef}>
             <SlideUp>
               <p className="text-accent dark:text-accent-light font-semibold text-sm mb-2 uppercase tracking-wide">
                 About Me
@@ -41,9 +88,7 @@ export function About() {
 
             <div className="space-y-4 text-slate-600 dark:text-slate-300 text-lg">
               {personalInfo.bio.map((paragraph, index) => (
-                <SlideUp key={index} delay={0.1 * (index + 1)}>
-                  <p>{paragraph}</p>
-                </SlideUp>
+                <p key={index}>{paragraph}</p>
               ))}
             </div>
 

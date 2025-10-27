@@ -9,8 +9,12 @@ import { Testimonial } from './components/Testimonial/Testimonial'
 import { Process } from './components/Process/Process'
 import { TechStack } from './components/TechStack/TechStack'
 import { Contact } from './components/Contact/Contact'
+import { useLenis } from './hooks/useLenis'
 
 function App() {
+  // Initialize smooth scrolling
+  useLenis()
+
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors">

@@ -3,40 +3,30 @@ import { ArrowDown } from 'lucide-react'
 import { Button } from '@/components/common/Button'
 import { personalInfo } from '@/data/personal'
 import { scrollToSection } from '@/utils/navigation'
+import { HeroBackground3D } from './HeroBackground3D'
+import { Suspense } from 'react'
 
 export function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-accent-subtle dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-        {/* Animated gradient orbs */}
-        <motion.div
-          className="absolute top-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-96 h-96 bg-accent-light/20 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-      </div>
+      {/* 3D Particle Background with fallback */}
+      <Suspense
+        fallback={
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-accent-subtle dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
+            <motion.div
+              className="absolute top-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+              transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          </div>
+        }
+      >
+        <HeroBackground3D />
+      </Suspense>
+
+      {/* Overlay gradient for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/50 dark:to-slate-900/50 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
