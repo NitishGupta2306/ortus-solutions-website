@@ -67,10 +67,12 @@ export function CompanyAbout() {
       }
     )
 
-    // Cleanup function to kill all ScrollTriggers
+    // Cleanup function to kill all ScrollTriggers and tweens
     return () => {
       contentTween.scrollTrigger?.kill()
+      contentTween.kill()
       valuesTween.scrollTrigger?.kill()
+      valuesTween.kill()
     }
   }, [gsap, ScrollTrigger])
 

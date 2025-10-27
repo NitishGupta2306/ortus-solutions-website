@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { Project } from '@/types'
 import { Card } from '@/components/common/Card'
 import { ExternalLink, TrendingUp, Users } from 'lucide-react'
@@ -10,7 +10,7 @@ interface ProjectCardProps {
   project: Project
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export const ProjectCard = memo(function ProjectCard({ project }: ProjectCardProps) {
   const [showDetails, setShowDetails] = useState(false)
   const teamMembers = getTeamMembersByIds(project.teamMemberIds)
 
@@ -20,14 +20,20 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {/* Project Image */}
         <div className="mb-4">
           <div className="aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent-light/20">
-            <img
-              src={project.images[0]}
-              alt={project.title}
-              className="w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
-              onError={handleImageError('Project Image', 800, 600)}
-            />
+            {project.images.length > 0 ? (
+              <img
+                src={project.images[0]}
+                alt={project.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                onError={handleImageError('Project Image', 800, 600)}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-slate-400 dark:text-slate-500">
+                <span className="text-sm">No image available</span>
+              </div>
+            )}
           </div>
         </div>
 
@@ -98,8 +104,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* View Details Button */}
         <button
+          type="button"
           onClick={() => setShowDetails(!showDetails)}
-          className="mt-auto text-sm text-accent dark:text-accent-light hover:underline font-medium"
+          className="mt-auto text-sm text-accent dark:text-accent-light hover:underline font-medium focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded"
+          aria-expanded={showDetails}
+          aria-controls={`project-details-${project.id}`}
         >
           {showDetails ? 'Hide Details' : 'View Case Study'}
         </button>
@@ -108,6 +117,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <AnimatePresence>
           {showDetails && (
             <motion.div
+              id={`project-details-${project.id}`}
+              role="region"
+              aria-label={`${project.title} case study details`}
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -196,4 +208,4 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
     </Card>
   )
-}
+})

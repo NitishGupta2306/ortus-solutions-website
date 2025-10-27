@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { TeamMember } from '@/types'
 import { Card } from '@/components/common/Card'
 import { Linkedin, Github, Twitter, Mail } from 'lucide-react'
@@ -9,7 +9,7 @@ interface TeamMemberCardProps {
   member: TeamMember
 }
 
-export function TeamMemberCard({ member }: TeamMemberCardProps) {
+export const TeamMemberCard = memo(function TeamMemberCard({ member }: TeamMemberCardProps) {
   const [showBio, setShowBio] = useState(false)
 
   return (
@@ -61,7 +61,7 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
               href={member.socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+              className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded"
               aria-label={`${member.name}'s LinkedIn`}
             >
               <Linkedin className="w-5 h-5" />
@@ -72,7 +72,7 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
               href={member.socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+              className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded"
               aria-label={`${member.name}'s GitHub`}
             >
               <Github className="w-5 h-5" />
@@ -83,7 +83,7 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
               href={member.socialLinks.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+              className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded"
               aria-label={`${member.name}'s Twitter`}
             >
               <Twitter className="w-5 h-5" />
@@ -92,7 +92,7 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
           {member.socialLinks.email && (
             <a
               href={`mailto:${member.socialLinks.email}`}
-              className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors"
+              className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent-light transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded"
               aria-label={`Email ${member.name}`}
             >
               <Mail className="w-5 h-5" />
@@ -102,8 +102,11 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
 
         {/* View Bio Button */}
         <button
+          type="button"
           onClick={() => setShowBio(!showBio)}
-          className="mt-auto text-sm text-accent dark:text-accent-light hover:underline font-medium"
+          className="mt-auto text-sm text-accent dark:text-accent-light hover:underline font-medium focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 rounded"
+          aria-expanded={showBio}
+          aria-controls={`bio-${member.id}`}
         >
           {showBio ? 'Hide Bio' : 'Read Bio'}
         </button>
@@ -112,6 +115,9 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
         <AnimatePresence>
           {showBio && (
             <motion.div
+              id={`bio-${member.id}`}
+              role="region"
+              aria-label={`${member.name}'s biography`}
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -137,4 +143,4 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
       </div>
     </Card>
   )
-}
+})

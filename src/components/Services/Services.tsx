@@ -56,9 +56,12 @@ export function Services() {
       triggers.push(tween)
     })
 
-    // Cleanup function to kill all ScrollTriggers
+    // Cleanup function to kill all ScrollTriggers and tweens
     return () => {
-      triggers.forEach(tween => tween.scrollTrigger?.kill())
+      triggers.forEach(tween => {
+        tween.scrollTrigger?.kill()
+        tween.kill()
+      })
     }
   }, [gsap, ScrollTrigger])
 
