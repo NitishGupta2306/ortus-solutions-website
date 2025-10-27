@@ -8,6 +8,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
  */
 export function useLenis() {
   useEffect(() => {
+    // Scroll to top on page load/refresh
+    window.scrollTo(0, 0)
+
     // Initialize Lenis
     const lenis = new Lenis({
       duration: 1.2,

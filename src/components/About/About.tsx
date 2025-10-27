@@ -14,35 +14,50 @@ export function About() {
   useEffect(() => {
     if (!imageRef.current || !contentRef.current) return
 
-    // Image zoom effect
+    // Image zoom and rotate effect - much more dramatic
     gsap.fromTo(
       imageRef.current,
-      { scale: 0.8, opacity: 0 },
+      {
+        scale: 0.5,
+        opacity: 0,
+        rotateY: -30,
+        x: -100
+      },
       {
         scale: 1,
         opacity: 1,
-        duration: 1.2,
-        ease: 'power3.out',
+        rotateY: 0,
+        x: 0,
+        duration: 1.5,
+        ease: 'elastic.out(1, 0.5)',
         scrollTrigger: {
           trigger: imageRef.current,
-          start: 'top 70%',
-          end: 'top 30%',
+          start: 'top 75%',
+          end: 'top 25%',
           toggleActions: 'play none none reverse',
+          scrub: 1,
         },
       }
     )
 
-    // Content paragraphs stagger fade
+    // Content paragraphs stagger with more dramatic entrance
     const paragraphs = contentRef.current.querySelectorAll('p')
     gsap.fromTo(
       paragraphs,
-      { y: 30, opacity: 0 },
       {
+        x: 100,
+        y: 50,
+        opacity: 0,
+        scale: 0.9
+      },
+      {
+        x: 0,
         y: 0,
         opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power2.out',
+        scale: 1,
+        duration: 1,
+        stagger: 0.15,
+        ease: 'back.out(1.5)',
         scrollTrigger: {
           trigger: contentRef.current,
           start: 'top 70%',

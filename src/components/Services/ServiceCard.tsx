@@ -12,17 +12,17 @@ export function ServiceCard({ service }: ServiceCardProps) {
   const Icon = service.icon
   const cardRef = useRef<HTMLDivElement>(null)
 
-  // Apply 3D tilt effect
-  useTilt(cardRef, { max: 10, scale: 1.03, speed: 400 })
+  // Apply 3D tilt effect with more intensity
+  useTilt(cardRef, { max: 20, scale: 1.08, speed: 300 })
 
   return (
     <div ref={cardRef} className="h-full">
       <Card hover className="h-full relative overflow-hidden">
-        {/* Glare effect */}
+        {/* Glare effect - more visible */}
         <div
-          className="absolute inset-0 opacity-0 hover:opacity-20 transition-opacity duration-300 pointer-events-none"
+          className="absolute inset-0 opacity-0 hover:opacity-40 transition-opacity duration-300 pointer-events-none"
           style={{
-            background: 'radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255,255,255,0.8), transparent 50%)',
+            background: 'radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(6,182,212,0.4), rgba(255,255,255,0.2) 30%, transparent 60%)',
           }}
         />
 

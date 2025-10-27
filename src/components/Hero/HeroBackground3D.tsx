@@ -57,10 +57,10 @@ function ParticleField() {
       <PointMaterial
         transparent
         color="#06B6D4"
-        size={0.015}
+        size={0.025}
         sizeAttenuation={true}
         depthWrite={false}
-        opacity={0.6}
+        opacity={0.8}
       />
     </Points>
   )

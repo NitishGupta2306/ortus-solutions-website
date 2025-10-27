@@ -17,27 +17,34 @@ export function Services() {
     const cards = cardsRef.current.querySelectorAll('.service-card')
 
     cards.forEach((card, index) => {
-      // Alternate between left and right
-      const direction = index % 2 === 0 ? -100 : 100
+      // Alternate between left and right with larger movement
+      const direction = index % 2 === 0 ? -200 : 200
 
       gsap.fromTo(
         card,
         {
           x: direction,
+          y: 100,
           opacity: 0,
-          rotateY: direction > 0 ? 20 : -20,
+          rotateY: direction > 0 ? 45 : -45,
+          rotateZ: direction > 0 ? 10 : -10,
+          scale: 0.6,
         },
         {
           x: 0,
+          y: 0,
           opacity: 1,
           rotateY: 0,
-          duration: 1,
-          ease: 'power3.out',
+          rotateZ: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: card,
-            start: 'top 80%',
-            end: 'top 50%',
+            start: 'top 85%',
+            end: 'top 40%',
             toggleActions: 'play none none reverse',
+            scrub: 0.5,
           },
         }
       )

@@ -7,12 +7,24 @@ export function scrollToSection(href: string): void {
   const element = document.querySelector(href)
   if (!element) return
 
+  // Header height for offset calculation
+  const headerHeight = 80
+
   // Try to use Lenis if available (via window.lenis)
   const lenis = (window as any).lenis
   if (lenis && typeof lenis.scrollTo === 'function') {
-    lenis.scrollTo(element, { offset: -80, duration: 1.5 })
+    // For Lenis, we need to scroll to the element's position minus the header
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY
+    lenis.scrollTo(elementPosition - headerHeight, {
+      duration: 1.5,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    })
   } else {
     // Fallback to native smooth scroll
-    element.scrollIntoView({ behavior: 'smooth' })
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY
+    window.scrollTo({
+      top: elementPosition - headerHeight,
+      behavior: 'smooth'
+    })
   }
 }
