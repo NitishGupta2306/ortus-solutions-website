@@ -21,6 +21,7 @@ export interface Project {
   images: string[]
   link?: string
   github?: string
+  teamMemberIds: string[] // IDs of team members who worked on this
 }
 
 export interface ProjectResult {
@@ -81,4 +82,34 @@ export interface SocialLinks {
   twitter?: string
   medium?: string
   email?: string
+}
+
+export interface TeamMember {
+  id: string
+  name: string
+  title: string
+  tagline: string
+  bio: string[]
+  photo: string
+  email: string
+  expertise: string[] // e.g., ["Data Pipelines", "Cloud Architecture", "Python"]
+  yearsOfExperience: number
+  socialLinks: SocialLinks
+}
+
+export interface CompanyInfo {
+  name: string
+  tagline: string
+  mission: string
+  values: string[]
+  founded: string // e.g., "June 2025"
+  description: string[] // Array of paragraphs
+  stats: CompanyStats
+}
+
+export interface CompanyStats {
+  totalExperience: number // Combined years
+  projectsCompleted: number
+  industriesServed: number
+  happyClients: number
 }
