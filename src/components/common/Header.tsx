@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from './Button'
 import { ThemeToggle } from './ThemeToggle'
@@ -9,6 +9,7 @@ import { scrollToSection as scrollToSectionUtil } from '@/utils/navigation'
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +32,42 @@ export function Header() {
       document.addEventListener('keydown', handleEscape)
       return () => document.removeEventListener('keydown', handleEscape)
     }
+  }, [isMobileMenuOpen])
+
+  // Focus trap for mobile menu
+  useEffect(() => {
+    if (!isMobileMenuOpen || !mobileMenuRef.current) return
+
+    const menu = mobileMenuRef.current
+    const focusableElements = menu.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
+    const firstElement = focusableElements[0]
+    const lastElement = focusableElements[focusableElements.length - 1]
+
+    // Focus first element when menu opens
+    firstElement?.focus()
+
+    const handleTab = (e: KeyboardEvent): void => {
+      if (e.key !== 'Tab') return
+
+      if (e.shiftKey) {
+        // Shift + Tab: if on first element, go to last
+        if (document.activeElement === firstElement) {
+          e.preventDefault()
+          lastElement?.focus()
+        }
+      } else {
+        // Tab: if on last element, go to first
+        if (document.activeElement === lastElement) {
+          e.preventDefault()
+          firstElement?.focus()
+        }
+      }
+    }
+
+    menu.addEventListener('keydown', handleTab)
+    return () => menu.removeEventListener('keydown', handleTab)
   }, [isMobileMenuOpen])
 
   const scrollToSection = (href: string) => {
@@ -110,7 +147,10 @@ export function Header() {
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="fixed top-16 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-slate-900 shadow-xl">
+          <div
+            ref={mobileMenuRef}
+            className="fixed top-16 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-slate-900 shadow-xl"
+          >
             <div className="flex flex-col p-6 space-y-4">
               {NAV_ITEMS.map(item => (
                 <button

@@ -2,6 +2,7 @@ import { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
 import * as THREE from 'three'
+import { useTheme } from '@/contexts/ThemeContext'
 import {
   PARTICLE_COUNT,
   PARTICLE_SPHERE_RADIUS,
@@ -16,6 +17,7 @@ import {
   CAMERA_FOV,
   CAMERA_POSITION,
   FOG_COLOR_LIGHT,
+  FOG_COLOR_DARK,
   FOG_NEAR,
   FOG_FAR,
   CANVAS_DPR,
@@ -87,8 +89,13 @@ function ParticleField() {
  * Respects prefers-reduced-motion for accessibility
  */
 export function HeroBackground3D() {
+  const { theme } = useTheme()
+
   // Check for reduced motion preference
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  // Dynamic fog color based on theme
+  const fogColor = theme === 'dark' ? FOG_COLOR_DARK : FOG_COLOR_LIGHT
 
   // If user prefers reduced motion, show static gradient instead
   if (prefersReducedMotion) {
@@ -112,8 +119,8 @@ export function HeroBackground3D() {
         {/* Particle field */}
         <ParticleField />
 
-        {/* Subtle fog for depth */}
-        <fog attach="fog" args={[FOG_COLOR_LIGHT, FOG_NEAR, FOG_FAR]} />
+        {/* Subtle fog for depth - dynamically changes with theme */}
+        <fog attach="fog" args={[fogColor, FOG_NEAR, FOG_FAR]} />
       </Canvas>
     </div>
   )

@@ -18,7 +18,12 @@ export function ServiceCard({ service }: ServiceCardProps) {
   return (
     <div ref={cardRef} className="h-full">
       <Card hover className="h-full relative overflow-hidden">
-        {/* Glare effect - more visible */}
+        {/*
+          Glare effect - more visible
+          Note: Inline style required here because CSS custom properties (--glare-x, --glare-y)
+          are dynamically set by the useTilt hook via JavaScript. These values update on mousemove
+          and cannot be predefined in Tailwind or a stylesheet.
+        */}
         <div
           className="absolute inset-0 opacity-0 hover:opacity-40 transition-opacity duration-300 pointer-events-none"
           style={{
