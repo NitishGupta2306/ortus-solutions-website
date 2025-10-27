@@ -93,6 +93,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
+          aria-hidden="true"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

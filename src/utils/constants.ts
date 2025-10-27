@@ -25,3 +25,6 @@ export const NAV_ITEMS = [
   { label: 'Process', href: '#process' },
   { label: 'Contact', href: '#contact' },
 ]
+
+// Layout constants
+export const HEADER_HEIGHT = 80 // pixels - used for scroll offset calculations

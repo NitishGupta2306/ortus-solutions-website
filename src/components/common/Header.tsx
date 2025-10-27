@@ -19,6 +19,20 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Handle Escape key to close mobile menu
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('keydown', handleEscape)
+      return () => document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isMobileMenuOpen])
+
   const scrollToSection = (href: string) => {
     setIsMobileMenuOpen(false)
     scrollToSectionUtil(href)
@@ -26,9 +40,17 @@ export function Header() {
 
   return (
     <>
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-300',
           isScrolled
             ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-sm'
             : 'bg-transparent'
@@ -40,6 +62,7 @@ export function Header() {
             <button
               onClick={() => scrollToSection('#hero')}
               className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 hover:text-accent dark:hover:text-accent-light transition-colors"
+              aria-label="Return to top of page"
             >
               {SITE_NAME}
             </button>

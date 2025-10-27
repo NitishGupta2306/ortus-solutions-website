@@ -77,7 +77,7 @@ export function Contact() {
                         href={SOCIAL_LINKS.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-accent hover:text-white dark:hover:bg-accent flex items-center justify-center transition-all"
+                        className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-accent hover:text-white dark:hover:bg-accent flex items-center justify-center transition-[background-color,color] duration-200"
                         aria-label="LinkedIn"
                       >
                         <Linkedin className="w-5 h-5" />
@@ -88,7 +88,7 @@ export function Contact() {
                         href={SOCIAL_LINKS.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-accent hover:text-white dark:hover:bg-accent flex items-center justify-center transition-all"
+                        className="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 hover:bg-accent hover:text-white dark:hover:bg-accent flex items-center justify-center transition-[background-color,color] duration-200"
                         aria-label="GitHub"
                       >
                         <Github className="w-5 h-5" />

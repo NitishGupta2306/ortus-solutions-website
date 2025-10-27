@@ -4,6 +4,7 @@ import { Container } from '@/components/common/Container'
 import { SlideUp } from '@/components/common/SlideUp'
 import { personalInfo } from '@/data/personal'
 import { useGSAP } from '@/hooks/useGSAP'
+import { handleImageError } from '@/utils/image'
 
 export function About() {
   const imageRef = useRef<HTMLDivElement>(null)
@@ -88,10 +89,7 @@ export function About() {
                   src={personalInfo.photo}
                   alt={personalInfo.name}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback placeholder if image doesn't load
-                    e.currentTarget.src = 'https://via.placeholder.com/600x600/06B6D4/FFFFFF?text=Your+Photo'
-                  }}
+                  onError={handleImageError('Your Photo', 600, 600)}
                 />
               </div>
               {/* Decorative element */}

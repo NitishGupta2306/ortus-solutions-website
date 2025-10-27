@@ -7,6 +7,7 @@ import { Card } from '@/components/common/Card'
 import { featuredProject } from '@/data/project'
 import { ExternalLink, TrendingUp } from 'lucide-react'
 import { useParallax } from '@/hooks/useParallax'
+import { handleImageError } from '@/utils/image'
 
 export function Portfolio() {
   const imageRef = useRef<HTMLDivElement>(null)
@@ -39,9 +40,7 @@ export function Portfolio() {
                   src={featuredProject.images[0]}
                   alt={featuredProject.title}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://via.placeholder.com/800x600/06B6D4/FFFFFF?text=Project+Image'
-                  }}
+                  onError={handleImageError('Project Image', 800, 600)}
                 />
               </div>
 

@@ -55,7 +55,7 @@ export function ContactForm() {
           id="name"
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? 'name-error' : undefined}
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-[border-color,box-shadow] duration-200"
           placeholder="Your name"
         />
         {errors.name && (
@@ -76,7 +76,7 @@ export function ContactForm() {
           id="email"
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? 'email-error' : undefined}
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-[border-color,box-shadow] duration-200"
           placeholder="your.email@example.com"
         />
         {errors.email && (
@@ -95,7 +95,7 @@ export function ContactForm() {
           {...register('company')}
           type="text"
           id="company"
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-[border-color,box-shadow] duration-200"
           placeholder="Your company"
         />
       </div>
