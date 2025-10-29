@@ -17,13 +17,14 @@ export const SOCIAL_LINKS = {
   email: 'contact@ortussolutions.com',
 }
 
-// Navigation
+// Navigation - ordered to match actual page flow
 export const NAV_ITEMS = [
+  { label: 'Values', href: '#values' },
+  { label: 'Projects', href: '#projects' },
   { label: 'About', href: '#about' },
   { label: 'Team', href: '#team' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Process', href: '#process' },
+  { label: 'Services', href: '#services' },
   { label: 'Contact', href: '#contact' },
 ]
 

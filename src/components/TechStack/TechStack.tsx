@@ -1,112 +1,88 @@
-import { useRef, useEffect } from 'react'
 import { Section } from '@/components/common/Section'
 import { Container } from '@/components/common/Container'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { SlideUp } from '@/components/common/SlideUp'
-import { SkillLevel } from '@/components/common/SkillLevel'
-import { technologies, techCategories } from '@/data/techStack'
-import { useGSAP } from '@/hooks/useGSAP'
+
+// Full stack combinations
+const techStacks = [
+  {
+    name: 'Modern Web Apps',
+    description: 'Fast, responsive, production-ready',
+    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind'],
+    gradient: 'from-blue-600 to-indigo-500',
+  },
+  {
+    name: 'Data Pipelines',
+    description: 'Scalable automation & analytics',
+    technologies: ['Python', 'Pandas', 'FastAPI', 'PostgreSQL', 'AWS S3'],
+    gradient: 'from-indigo-600 to-blue-500',
+  },
+  {
+    name: 'Cloud Infrastructure',
+    description: 'Secure, scalable deployment',
+    technologies: ['Docker', 'AWS/GCP', 'GitHub Actions', 'Terraform', 'Nginx'],
+    gradient: 'from-sky-600 to-blue-500',
+  },
+  {
+    name: 'AI Integration',
+    description: 'Smart features, real insights',
+    technologies: ['OpenAI', 'LangChain', 'Vector DBs', 'RAG', 'Fine-tuning'],
+    gradient: 'from-blue-500 to-indigo-400',
+  },
+]
 
 export function TechStack() {
-  const stackRef = useRef<HTMLDivElement>(null)
-  const { gsap, ScrollTrigger } = useGSAP()
-
-  useEffect(() => {
-    if (!stackRef.current) return
-
-    // Respect user's motion preferences
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) return
-
-    const categories = stackRef.current.querySelectorAll('.tech-category')
-    const tweens: gsap.core.Tween[] = []
-
-    categories.forEach((category) => {
-      const logos = category.querySelectorAll('.tech-logo')
-
-      const tween = gsap.fromTo(
-        logos,
-        {
-          scale: 0,
-          opacity: 0,
-          rotateY: 180,
-          y: 50,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          rotateY: 0,
-          y: 0,
-          duration: 0.4,
-          stagger: 0.02,
-          ease: 'back.out(2)',
-          scrollTrigger: {
-            trigger: category,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      )
-      tweens.push(tween)
-    })
-
-    // Cleanup function to kill all ScrollTriggers
-    return () => {
-      tweens.forEach(tween => tween.scrollTrigger?.kill())
-    }
-  }, [gsap, ScrollTrigger])
-
   return (
-    <Section background="subtle">
+    <Section background="dark">
       <Container>
         <SlideUp>
           <SectionHeading
             centered
-            subtitle="Modern tools and technologies I use to build robust solutions"
+            subtitle="Your business comes first — we tailor the tech to match your needs."
           >
             Tech Stack
           </SectionHeading>
         </SlideUp>
 
-        <div ref={stackRef} className="space-y-12">
-          {techCategories.map((category) => {
-            const categoryTech = technologies.filter(tech => tech.category === category)
+        {/* 4 Tech Stack Bubbles */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {techStacks.map((stack, index) => (
+            <SlideUp key={stack.name} delay={0.1 + index * 0.1}>
+              <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border-2 border-transparent hover:border-accent/30 transition-all hover:scale-105 hover:shadow-2xl">
+                {/* Gradient top bar */}
+                <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${stack.gradient} rounded-t-2xl`} />
 
-            if (categoryTech.length === 0) return null
-
-            return (
-              <div key={category} className="tech-category">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-center md:text-left">
-                  {category}
+                {/* Stack Name */}
+                <h3 className={`text-2xl font-bold bg-gradient-to-r ${stack.gradient} bg-clip-text text-transparent mb-2 mt-2`}>
+                  {stack.name}
                 </h3>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" style={{ perspective: '1000px' }}>
-                  {categoryTech.map((tech) => (
-                    <div key={tech.name} className="tech-logo group flex flex-col items-center p-4 bg-white dark:bg-slate-800 rounded-lg hover:shadow-lg hover:-translate-y-1 transition-[transform,box-shadow] duration-300 border border-slate-200 dark:border-slate-700">
-                      <div className="w-12 h-12 mb-3 flex items-center justify-center">
-                        {/* Placeholder for tech logo */}
-                        <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-lg flex items-center justify-center text-accent dark:text-accent-light font-bold text-xs">
-                          {tech.name.substring(0, 2).toUpperCase()}
-                        </div>
-                      </div>
-                      <p className="text-sm font-medium text-slate-700 dark:text-slate-300 text-center group-hover:text-accent dark:group-hover:text-accent-light transition-colors mb-2">
-                        {tech.name}
-                      </p>
-                      {tech.level && (
-                        <SkillLevel level={tech.level} />
-                      )}
-                    </div>
+                {/* Description */}
+                <p className="text-slate-600 dark:text-slate-300 text-sm mb-4 italic">
+                  {stack.description}
+                </p>
+
+                {/* Technologies as tags */}
+                <div className="flex flex-wrap gap-2">
+                  {stack.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className={`px-3 py-1.5 text-sm bg-gradient-to-r ${stack.gradient} text-white rounded-full font-medium shadow-md`}
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
-            )
-          })}
+            </SlideUp>
+          ))}
         </div>
 
+        {/* Tagline */}
         <SlideUp delay={0.5}>
-          <div className="mt-12 text-center">
-            <p className="text-slate-600 dark:text-slate-400">
-              ...and many more tools as needed for your specific project
+          <div className="mt-12 text-center max-w-2xl mx-auto">
+            <p className="text-lg text-slate-700 dark:text-slate-200 font-medium">
+              Every project is unique. We pick the right tools for <span className="text-accent dark:text-accent-light font-bold">your</span> goals.
             </p>
           </div>
         </SlideUp>

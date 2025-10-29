@@ -11,23 +11,17 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* 3D Particle Background with fallback */}
+      {/* 3D Particle Background with simple fallback - NO glowy circles */}
       <Suspense
         fallback={
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-accent-subtle dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
-            <motion.div
-              className="absolute top-20 left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-accent-subtle dark:from-slate-950 dark:via-slate-900 dark:to-slate-800" />
         }
       >
         <HeroBackground3D />
       </Suspense>
 
-      {/* Overlay gradient for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/50 dark:to-slate-900/50 pointer-events-none" />
+      {/* Radial gradient overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-radial from-slate-900/40 via-slate-900/20 to-transparent dark:from-slate-900/60 dark:via-slate-900/30 dark:to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
@@ -36,41 +30,24 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.p
-            className="text-accent dark:text-accent-light font-semibold text-sm md:text-base mb-4 tracking-wide uppercase"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            {companyInfo.name}
-          </motion.p>
-
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white mb-6 leading-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
           >
-            {companyInfo.tagline}
+            ORTUS SOLUTIONS
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl mx-auto min-h-[4rem] flex items-center justify-center"
+            className="text-xl md:text-2xl lg:text-3xl text-slate-700 dark:text-slate-200 font-medium mb-12 max-w-4xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.4 }}
           >
-            <TypingAnimation
-              texts={[
-                'We build custom data pipelines that scale',
-                'We automate workflows that save hours daily',
-                'We process millions of records with confidence',
-                'We turn data chaos into actionable insights'
-              ]}
-              typingSpeed={80}
-              deletingSpeed={40}
-              pauseDuration={2500}
-            />
+            Build once. Scale forever.
+            <br />
+            We automate the technical chaos so you can focus on revenue.
           </motion.p>
 
           <motion.div

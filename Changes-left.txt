@@ -1,0 +1,23 @@
+MAJOR ISSUE: They layout of our website doesnt make sense. We want the flow of catch their attention with the landing / hero section. Make them know who we are / build trust. Capture on that "huh they seem good" by showing testimonials so they go dam someone really trusted them with their company. Then we move to meeting the team to humanise and personlize the people in the company. Explain how working with use actually looks and our values. And then finally a call to action BAM. Idk if this is the best way/ flow. But research some and tell me the best flow
+
+
+
+OTHER ISSUES MAJOR:
+I would like the front / landing page to have: ORTUS SOLUTIONS in big bold text with a sub text that says “Less maintenance. More momentum. Focus on growth—we’ll handle the grind.”
+
+Followed by our core values.
+
+
+For the About us. let's stick to more like key words and important points instead of paragraphs. 
+
+
+core values. Currently the core values section doesnt fit in one page. Instead it 4 massive cards that are like 1.5 pages long. So please make them look nicer and fit in one page.
+
+Meet the team cards are kinda too formal? I think we need to make them more creative / fun
+
+The Our projects section definitely needs a lift up. It should have on project in focus and scrolling shows other projects. Clicking on one leading to the full description.
+
+
+The tech stack stuff is too long and tedious for people to read. Just make it like have 4 bubbles each with like one full stack that we would use. And like maybe a tag line under the tech stack: “Your business comes first — we tailor the tech to match your needs.”
+
+

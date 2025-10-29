@@ -97,11 +97,18 @@ export interface TeamMember {
   socialLinks: SocialLinks
 }
 
+export interface CoreValue {
+  title: string
+  subtitle: string
+  points: string[] // Short bullet points instead of paragraph
+  icon: string // Lucide icon name as string
+}
+
 export interface CompanyInfo {
   name: string
   tagline: string
   mission: string
-  values: string[]
+  values: CoreValue[]
   founded: string // e.g., "June 2025"
   description: string[] // Array of paragraphs
   stats: CompanyStats

@@ -47,7 +47,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
           Name *
         </label>
         <input
@@ -56,11 +56,11 @@ export function ContactForm() {
           id="name"
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? 'name-error' : undefined}
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-[border-color,box-shadow] duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-blue-100 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
           placeholder="Your name"
         />
         {errors.name && (
-          <p id="name-error" role="alert" className="mt-1 text-sm text-error dark:text-error-light">
+          <p id="name-error" role="alert" className="mt-1 text-sm text-red-200">
             {errors.name.message}
           </p>
         )}
@@ -68,7 +68,7 @@ export function ContactForm() {
 
       {/* Email */}
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
           Email *
         </label>
         <input
@@ -77,11 +77,11 @@ export function ContactForm() {
           id="email"
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? 'email-error' : undefined}
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-[border-color,box-shadow] duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-blue-100 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
           placeholder="your.email@example.com"
         />
         {errors.email && (
-          <p id="email-error" role="alert" className="mt-1 text-sm text-error dark:text-error-light">
+          <p id="email-error" role="alert" className="mt-1 text-sm text-red-200">
             {errors.email.message}
           </p>
         )}
@@ -89,21 +89,21 @@ export function ContactForm() {
 
       {/* Company (Optional) */}
       <div>
-        <label htmlFor="company" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-          Company <span className="text-slate-400">(optional)</span>
+        <label htmlFor="company" className="block text-sm font-semibold text-white mb-2">
+          Company <span className="text-blue-100">(optional)</span>
         </label>
         <input
           {...register('company')}
           type="text"
           id="company"
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-[border-color,box-shadow] duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-blue-100 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
           placeholder="Your company"
         />
       </div>
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+        <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">
           Project Description *
         </label>
         <textarea
@@ -112,11 +112,11 @@ export function ContactForm() {
           rows={5}
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? 'message-error' : undefined}
-          className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-blue-100 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200 resize-none"
           placeholder="Tell me about your project and what you need help with..."
         />
         {errors.message && (
-          <p id="message-error" role="alert" className="mt-1 text-sm text-error dark:text-error-light">
+          <p id="message-error" role="alert" className="mt-1 text-sm text-red-200">
             {errors.message.message}
           </p>
         )}
@@ -126,7 +126,7 @@ export function ContactForm() {
       <Button
         type="submit"
         size="lg"
-        className="w-full relative overflow-hidden"
+        className="w-full relative overflow-hidden bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200"
         isLoading={submitStatus === 'loading'}
         disabled={submitStatus === 'loading'}
       >

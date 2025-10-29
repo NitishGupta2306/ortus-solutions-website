@@ -112,6 +112,8 @@ export function HeroBackground3D() {
         camera={{ position: CAMERA_POSITION, fov: CAMERA_FOV }}
         className="w-full h-full"
         dpr={CANVAS_DPR}
+        gl={{ alpha: true, antialias: true }}
+        style={{ background: 'transparent' }}
       >
         {/* Ambient lighting */}
         <ambientLight intensity={0.5} />
@@ -119,8 +121,7 @@ export function HeroBackground3D() {
         {/* Particle field */}
         <ParticleField />
 
-        {/* Subtle fog for depth - dynamically changes with theme */}
-        <fog attach="fog" args={[fogColor, FOG_NEAR, FOG_FAR]} />
+        {/* NO fog - makes particles invisible in light mode */}
       </Canvas>
     </div>
   )

@@ -3,10 +3,12 @@ import { Header } from './components/common/Header'
 import { Footer } from './components/common/Footer'
 import { Hero } from './components/Hero/Hero'
 import { CompanyAbout } from './components/About/CompanyAbout'
+import { CoreValues } from './components/About/CoreValues'
 import { Team } from './components/Team/Team'
 import { Services } from './components/Services/Services'
-import { ProjectsGallery } from './components/Projects/ProjectsGallery'
+import { Projects } from './components/Projects/Projects'
 import { Testimonial } from './components/Testimonial/Testimonial'
+import { TestimonialOptions } from './components/Testimonial/TestimonialOptions'
 import { Process } from './components/Process/Process'
 import { TechStack } from './components/TechStack/TechStack'
 import { Contact } from './components/Contact/Contact'
@@ -22,15 +24,16 @@ function App() {
         <Header />
 
         <main id="main-content">
-          <Hero />
-          <CompanyAbout />
-          <Team />
-          <Services />
-          <ProjectsGallery />
-          <Testimonial />
-          <Process />
-          <TechStack />
-          <Contact />
+          <Hero /> {/* Gradient/Particles */}
+          <CoreValues /> {/* dark (slate-950) */}
+          <Testimonial /> {/* white */}
+          <Projects /> {/* subtle (slate-50) */}
+          <CompanyAbout /> {/* white */}
+          <Team /> {/* subtle (slate-50) */}
+          <Process /> {/* white - CHANGED */}
+          <TechStack /> {/* subtle (slate-50) - CHANGED */}
+          <Services /> {/* white - CHANGED */}
+          <Contact /> {/* Gradient CTA */}
         </main>
 
         <Footer />

@@ -5,10 +5,7 @@ export const services: Service[] = [
   {
     id: 'data-pipelines',
     title: 'Data Pipeline Development',
-    description: `We build scalable, reliable data pipelines from scratch using modern tools like
-      Apache Airflow, AWS, and Python. Whether you need real-time streaming or batch processing,
-      we design architectures that handle millions of records while maintaining data quality and
-      comprehensive monitoring.`,
+    description: `Stop manually moving data between systems. We build automated pipelines that process millions of records monthly.`,
     icon: Database,
     features: [
       'ETL/ELT pipeline design and implementation',
@@ -21,9 +18,7 @@ export const services: Service[] = [
   {
     id: 'workflow-automation',
     title: 'Workflow Automation',
-    description: `Automate repetitive tasks and business processes to save time and reduce errors.
-      We create custom automation solutions that integrate with your existing tools, from simple
-      scripts to complex orchestrated workflows, freeing your team to focus on high-value work.`,
+    description: `If you're doing it more than twice, we can automate it. Eliminate repetitive tasks and free your team to focus on growth.`,
     icon: Workflow,
     features: [
       'Business process automation',
@@ -36,9 +31,7 @@ export const services: Service[] = [
   {
     id: 'system-integration',
     title: 'System Integration',
-    description: `Connect disparate systems and data sources seamlessly. We specialize in building
-      robust integrations between databases, APIs, and third-party services, ensuring your data
-      flows smoothly across your entire technology stack with proper error handling and monitoring.`,
+    description: `Connect your systems so data flows automatically. No more manual syncing or version conflicts between platforms.`,
     icon: Zap,
     features: [
       'API development and integration',
@@ -51,9 +44,7 @@ export const services: Service[] = [
   {
     id: 'custom-solutions',
     title: 'Custom Solutions',
-    description: `Every business has unique needs. We develop tailored software solutions that
-      address your specific challenges, from custom dashboards and internal tools to specialized
-      data processing applications. Full-stack capabilities ensure end-to-end solution delivery.`,
+    description: `Off-the-shelf tools don't fit your workflow. We build custom applications tailored to your exact business needs.`,
     icon: Code,
     features: [
       'Custom application development',

@@ -4,8 +4,6 @@
 
 ---
 
-## Team Member #1
-
 ### Basic Information
 
 **Full Name:**
@@ -23,21 +21,6 @@
 [e.g., "Building scalable data infrastructure for Fortune 500 companies"]
 ```
 
-**Email:**
-```
-[Your professional email - can be personal or @ortussolutions.com]
-```
-
-**Phone:** _(Optional)_
-```
-[Your preferred contact number]
-```
-
-**Location:** _(Optional)_
-```
-[City, State or "Remote"]
-```
-
 **Years of Professional Experience:**
 ```
 [Number of years in the industry]
@@ -47,7 +30,7 @@
 
 ### Biography
 
-**Professional Bio (3 paragraphs):**
+**Professional Bio (3 paragraphs (short)):**
 
 Paragraph 1 - Your Journey:
 ```
@@ -184,11 +167,6 @@ Example: "When I'm not wrangling data pipelines, you'll find me contributing to 
 [e.g., "Lead Data Engineer", "Cloud Architect", "Solo Consultant"]
 ```
 
-**Team Members Involved:** _(if applicable)_
-```
-[List other Ortus team members who worked on this, or "Solo project"]
-```
-
 **Challenge (2-3 sentences):**
 ```
 [What problem were you solving? What was the pain point?]
@@ -232,20 +210,7 @@ Example: "I designed a cloud-native data lake on AWS using S3, Glue, and Athena.
 [URL to public repo or live demo]
 ```
 
----
-
-#### Project 2
-[Repeat the same structure as Project 1]
-
-#### Project 3
-[Repeat the same structure as Project 1]
-
-#### Project 4
-[Repeat the same structure as Project 1]
-
----
-
-### Testimonials
+### Testimonials (OPTIONAL)
 
 **List 1-3 client testimonials about your work:**
 
@@ -292,16 +257,6 @@ Example: "Working with [Your Name] transformed our data infrastructure. What use
 ```
 [URL or filename]
 ```
-
----
-
-#### Testimonial 2
-[Repeat the same structure]
-
-#### Testimonial 3
-[Repeat the same structure]
-
----
 
 ### Media & Links
 
@@ -396,58 +351,6 @@ Example: "Built my first pipeline to track pizza delivery times in college"
 
 ---
 
-## For Internal Use (Company-wide)
-
-### Company Information
-
-**Company Founding Year:**
-```
-[When was Ortus Solutions established?]
-```
-
-**Company Mission Statement:**
-```
-[What is Ortus Solutions' mission? Why do we exist?]
-```
-
-**Company Values:**
-```
-[3-5 core values that drive the company]
-1.
-2.
-3.
-```
-
-**Total Team Stats:**
-- **Combined Years of Experience:** [Sum of all members]
-- **Total Projects Completed:** [Count across all members]
-- **Industries Served:** [List of industries]
-- **Total Clients:** [Unique client count]
-
-**Company-wide Technologies:**
-```
-[Combined tech stack from all team members - we'll deduplicate]
-```
-
----
-
-## Submission Instructions
-
-1. **Fill out all sections** marked as required
-2. **Provide high-quality photos** (minimum 600x600px for headshots, 1200x800px for project images)
-3. **Be specific with metrics** - actual numbers are more impressive than vague claims
-4. **Keep tone professional but personable** - we want to show the humans behind the code
-5. **Get client permission** for testimonials and project details if under NDA
-6. **Review for confidential information** - don't expose trade secrets or proprietary data
-
-**Submit to:** [Email or shared drive location]
-
-**Deadline:** [Date]
-
-**Questions?** Contact [point person] at [email]
-
----
-
 ## Tips for Great Submissions
 
 ### Photos
@@ -475,5 +378,3 @@ Example: "Built my first pipeline to track pizza delivery times in college"
 - ❌ Don't fake testimonials - authenticity matters
 
 ---
-
-**Need help?** This is a lot of information! If you need help with any section, reach out and we can do a 30-minute call to capture this information together.

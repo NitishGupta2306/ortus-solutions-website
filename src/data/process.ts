@@ -5,33 +5,25 @@ export const processSteps: ProcessStep[] = [
   {
     id: 'discovery',
     title: 'Discovery & Planning',
-    description: `We start by understanding your business goals and technical requirements. We'll
-      discuss your current data challenges, define success metrics, and outline the project scope.
-      This initial consultation is free and helps us determine if we're a good fit.`,
+    description: `Free 30-minute call where we figure out if we can actually help you (no sales pitch). We'll discuss your current challenges, define success metrics, and outline what's realistic. If we're not the right fit, we'll tell you upfront.`,
     icon: Search,
   },
   {
     id: 'design',
     title: 'Design & Architecture',
-    description: `We design a scalable solution tailored to your needs, selecting the right
-      technologies and defining clear milestones. You'll get a detailed architecture diagram,
-      technical specification, and transparent timeline with cost estimates.`,
+    description: `You get a visual architecture diagram showing exactly what we're building, plus a clear timeline and cost breakdown—no surprises later. We pick the right technologies for your needs, not whatever's trendy this month.`,
     icon: Layout,
   },
   {
     id: 'development',
     title: 'Development & Testing',
-    description: `Using agile methodology, we build your solution in iterations, keeping you updated
-      with regular progress reports. Rigorous testing ensures reliability and performance at scale.
-      You'll have access to staging environments to review progress.`,
+    description: `Weekly demos in staging—you see progress, not just status updates. We build in iterations and adapt based on your feedback. Rigorous testing ensures things don't break when you hit production. You always have access to review what we've built so far.`,
     icon: Code2,
   },
   {
     id: 'deployment',
     title: 'Deployment & Support',
-    description: `We deploy to production with minimal disruption, provide complete documentation,
-      and offer training to your team. Post-launch support ensures smooth operation, and we're
-      available for ongoing maintenance and enhancements as needed.`,
+    description: `We don't just ship and disappear. You get complete documentation and training so your team owns the system. We deploy with minimal disruption, monitor the launch, and stick around for post-launch support. Available for ongoing maintenance when you need it.`,
     icon: Rocket,
   },
 ]

@@ -9,49 +9,22 @@ import { CheckCircle2 } from 'lucide-react'
 
 export function CompanyAbout() {
   const contentRef = useRef<HTMLDivElement>(null)
-  const valuesRef = useRef<HTMLDivElement>(null)
   const { gsap, ScrollTrigger } = useGSAP()
 
   useEffect(() => {
-    if (!contentRef.current || !valuesRef.current) return
+    if (!contentRef.current) return
 
     // Respect user's motion preferences
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReducedMotion) return
 
-    // Content paragraphs stagger
-    const paragraphs = contentRef.current.querySelectorAll('p')
+    // Content bullet points stagger
+    const listItems = contentRef.current.querySelectorAll('li')
     const contentTween = gsap.fromTo(
-      paragraphs,
+      listItems,
       {
-        x: 100,
-        y: 50,
-        opacity: 0,
-        scale: 0.9
-      },
-      {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'back.out(1.5)',
-        scrollTrigger: {
-          trigger: contentRef.current,
-          start: 'top 70%',
-          toggleActions: 'play none none reverse',
-        },
-      }
-    )
-
-    // Values items stagger
-    const valueItems = valuesRef.current.querySelectorAll('li')
-    const valuesTween = gsap.fromTo(
-      valueItems,
-      {
-        x: -50,
-        opacity: 0,
+        x: 50,
+        opacity: 0
       },
       {
         x: 0,
@@ -60,8 +33,8 @@ export function CompanyAbout() {
         stagger: 0.1,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: valuesRef.current,
-          start: 'top 75%',
+          trigger: contentRef.current,
+          start: 'top 85%',
           toggleActions: 'play none none reverse',
         },
       }
@@ -71,13 +44,11 @@ export function CompanyAbout() {
     return () => {
       contentTween.scrollTrigger?.kill()
       contentTween.kill()
-      valuesTween.scrollTrigger?.kill()
-      valuesTween.kill()
     }
   }, [gsap, ScrollTrigger])
 
   return (
-    <Section id="about" background="white">
+    <Section id="about" background="subtle">
       <Container>
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -95,32 +66,19 @@ export function CompanyAbout() {
             </div>
           </SlideUp>
 
-          {/* Company Description */}
-          <div ref={contentRef} className="space-y-4 text-slate-600 dark:text-slate-300 text-lg mb-12">
-            {companyInfo.description.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+          {/* Company Description - Bullet Points */}
+          <div ref={contentRef} className="mb-12">
+            <ul className="grid md:grid-cols-2 gap-4">
+              {companyInfo.description.map((point, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-accent dark:text-accent-light flex-shrink-0 mt-1" />
+                  <span className="text-slate-700 dark:text-slate-300 text-base leading-relaxed">
+                    {point}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
-
-          {/* Core Values */}
-          <SlideUp delay={0.2}>
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">
-                Our Core Values
-              </h3>
-              <ul ref={valuesRef} className="grid md:grid-cols-2 gap-4">
-                {companyInfo.values.map((value, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-slate-700 dark:text-slate-300"
-                  >
-                    <CheckCircle2 className="w-6 h-6 text-accent dark:text-accent-light flex-shrink-0 mt-0.5" />
-                    <span className="font-medium">{value}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </SlideUp>
 
           {/* Company Stats */}
           <SlideUp delay={0.4}>

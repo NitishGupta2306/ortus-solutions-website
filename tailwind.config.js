@@ -13,10 +13,10 @@ export default {
           light: '#1E293B',
         },
         accent: {
-          DEFAULT: '#06B6D4',
-          light: '#22D3EE',
-          dark: '#0891B2',
-          subtle: '#ECFEFF', // cyan-50 equivalent
+          DEFAULT: '#3B82F6', // blue-500 (professional blue)
+          light: '#60A5FA',   // blue-400 (bright blue)
+          dark: '#1E40AF',    // blue-800 (deep navy)
+          subtle: '#EFF6FF',  // blue-50
         },
         error: {
           DEFAULT: '#DC2626', // red-600
@@ -35,8 +35,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
@@ -61,6 +62,13 @@ export default {
           '0%': { transform: 'translateX(30px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+      },
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '3rem',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
       },
     },
   },

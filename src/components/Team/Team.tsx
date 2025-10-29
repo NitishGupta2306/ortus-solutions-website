@@ -7,7 +7,7 @@ import { teamMembers } from '@/data/team'
 
 export function Team() {
   return (
-    <Section id="team" background="white">
+    <Section id="team" background="dark">
       <Container>
         <SlideUp>
           <SectionHeading
@@ -18,10 +18,10 @@ export function Team() {
           </SectionHeading>
         </SlideUp>
 
-        {/* Team Members Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Team Members Grid - Extra padding top for elevated photos */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-12">
           {teamMembers.map((member, index) => (
-            <SlideUp key={member.id} delay={0.2 + index * 0.1}>
+            <SlideUp key={member.id} delay={0.2 + index * 0.1} className="min-h-[550px]">
               <TeamMemberCard member={member} />
             </SlideUp>
           ))}
