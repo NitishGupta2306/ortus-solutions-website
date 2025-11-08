@@ -14,14 +14,14 @@ export function Hero() {
       {/* 3D Particle Background with simple fallback - NO glowy circles */}
       <Suspense
         fallback={
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F4FAFF] via-[#96897B]/20 to-[#0D5C63]/30 dark:from-[#040303] dark:via-[#0D5C63]/30 dark:to-[#040303]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F4FAFF] via-[#96897B]/20 to-[#0D5C63]/30 dark:from-slate-900 dark:via-[#0D5C63]/30 dark:to-slate-900" />
         }
       >
         <HeroBackground3D />
       </Suspense>
 
       {/* Radial gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-radial from-[#0D5C63]/40 via-[#0D5C63]/20 to-transparent dark:from-[#040303]/60 dark:via-[#0D5C63]/30 dark:to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-radial from-[#0D5C63]/40 via-[#0D5C63]/20 to-transparent dark:from-slate-900/60 dark:via-[#0D5C63]/30 dark:to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
