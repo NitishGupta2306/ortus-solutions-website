@@ -32,7 +32,7 @@ export function Footer() {
                 <li key={item.href}>
                   <button
                     onClick={() => scrollToSection(item.href)}
-                    className="text-slate-400 hover:text-accent-light transition-colors text-sm"
+                    className="text-slate-400 hover:text-[#0D5C63]-light transition-colors text-sm"
                   >
                     {item.label}
                   </button>
@@ -51,7 +51,7 @@ export function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 hover:text-accent-light transition-[background-color,color] duration-200"
+                  className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 hover:text-[#0D5C63]-light transition-[background-color,color] duration-200"
                   aria-label={label}
                 >
                   <Icon className="w-5 h-5" />

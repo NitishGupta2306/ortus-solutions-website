@@ -85,7 +85,7 @@ export function About() {
           {/* Photo */}
           <div ref={imageRef}>
             <div className="relative">
-              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-accent-light/20">
+              <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-[#0D5C63]/20 to-[#96897B]/20">
                 <img
                   src={personalInfo.photo}
                   alt={personalInfo.name}
@@ -103,7 +103,7 @@ export function About() {
           {/* Content */}
           <div ref={contentRef}>
             <SlideUp>
-              <p className="text-accent dark:text-accent-light font-semibold text-sm mb-2 uppercase tracking-wide">
+              <p className="text-[#0D5C63] dark:text-[#0D5C63] font-semibold text-sm mb-2 uppercase tracking-wide">
                 About Me
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
@@ -120,13 +120,13 @@ export function About() {
             <SlideUp delay={0.4}>
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div>
-                  <p className="text-3xl font-bold text-accent dark:text-accent-light">
+                  <p className="text-3xl font-bold text-[#0D5C63] dark:text-[#0D5C63]">
                     <AnimatedCounter end={personalInfo.yearsOfExperience} suffix="+" />
                   </p>
                   <p className="text-slate-600 dark:text-slate-400">Years Experience</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-accent dark:text-accent-light">
+                  <p className="text-3xl font-bold text-[#0D5C63] dark:text-[#0D5C63]">
                     <AnimatedCounter end={20} suffix="+" />
                   </p>
                   <p className="text-slate-600 dark:text-slate-400">Projects Completed</p>

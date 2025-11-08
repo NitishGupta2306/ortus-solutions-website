@@ -13,14 +13,14 @@ export function ProjectsBlob() {
 
   const project = selectedProject ? projects.find(p => p.id === selectedProject) : null
 
-  // Define unique gradients for each project - all blue theme
+  // Define unique gradients for each project - custom palette theme
   const projectGradients = [
-    { start: 'blue-400', end: 'blue-600' },
-    { start: 'blue-500', end: 'indigo-600' },
-    { start: 'indigo-400', end: 'blue-500' },
-    { start: 'sky-400', end: 'blue-600' },
-    { start: 'blue-600', end: 'indigo-500' },
-    { start: 'indigo-500', end: 'sky-600' },
+    { start: 'teal-400', end: 'teal-600' },
+    { start: 'teal-500', end: 'red-600' },
+    { start: 'red-400', end: 'teal-500' },
+    { start: 'taupe-400', end: 'teal-600' },
+    { start: 'teal-600', end: 'red-500' },
+    { start: 'red-500', end: 'taupe-600' },
   ]
 
   return (
@@ -140,7 +140,7 @@ export function ProjectsBlob() {
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 text-sm bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent-light rounded-full"
+                          className="px-3 py-1 text-sm bg-accent/10 dark:bg-accent/20 text-[#0D5C63] dark:text-[#0D5C63] rounded-full"
                         >
                           {tech}
                         </span>
@@ -158,7 +158,7 @@ export function ProjectsBlob() {
                           key={idx}
                           className="p-4 bg-accent/5 dark:bg-accent/10 rounded-xl"
                         >
-                          <div className="text-2xl font-bold text-accent dark:text-accent-light mb-1">
+                          <div className="text-2xl font-bold text-[#0D5C63] dark:text-[#0D5C63] mb-1">
                             {result.value}
                           </div>
                           <div className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">

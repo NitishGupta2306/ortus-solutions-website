@@ -30,7 +30,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
             <div className="flex flex-col items-center justify-center h-full text-center pointer-events-none p-8">
               {/* Icon */}
               <div className="mb-4">
-                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-accent to-accent-light flex items-center justify-center shadow-lg">
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#0D5C63] to-[#96897B] flex items-center justify-center shadow-lg">
                   <Icon className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -41,7 +41,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
               </h3>
 
               {/* Short Description */}
-              <p className="text-accent dark:text-accent-light font-medium text-base">
+              <p className="text-[#0D5C63] dark:text-[#0D5C63] font-medium text-base">
                 {service.description.split('.')[0]}.
               </p>
 
@@ -64,7 +64,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
             <div className="flex flex-col h-full p-6">
               {/* Title on Back */}
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-10 h-10 rounded-md bg-gradient-to-br from-accent to-accent-light flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-md bg-gradient-to-br from-[#0D5C63] to-[#96897B] flex items-center justify-center flex-shrink-0">
                   <Icon className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
@@ -82,7 +82,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
                 <ul className="space-y-2">
                   {service.features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-accent dark:text-accent-light flex-shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-[#0D5C63] dark:text-[#0D5C63] flex-shrink-0 mt-0.5" />
                       <span className="text-sm text-slate-600 dark:text-slate-300 leading-snug">
                         {feature}
                       </span>

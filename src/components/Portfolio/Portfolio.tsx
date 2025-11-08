@@ -34,7 +34,7 @@ export function Portfolio() {
               {/* Project Image */}
               <div
                 ref={imageRef}
-                className="relative aspect-video md:aspect-square bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-lg overflow-hidden"
+                className="relative aspect-video md:aspect-square bg-gradient-to-br from-[#0D5C63]/20 to-[#96897B]/20 rounded-lg overflow-hidden"
               >
                 <img
                   src={featuredProject.images[0]}
@@ -48,7 +48,7 @@ export function Portfolio() {
 
               {/* Project Details */}
               <div>
-                <div className="flex items-center gap-2 text-sm text-accent dark:text-accent-light mb-2">
+                <div className="flex items-center gap-2 text-sm text-[#0D5C63] dark:text-[#0D5C63] mb-2">
                   <span className="font-semibold">{featuredProject.industry}</span>
                   {featuredProject.duration && (
                     <>
@@ -97,13 +97,13 @@ export function Portfolio() {
                   {/* Results */}
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center">
-                      <TrendingUp className="w-5 h-5 mr-2 text-accent" />
+                      <TrendingUp className="w-5 h-5 mr-2 text-[#0D5C63]" />
                       Results
                     </h4>
                     <div className="grid grid-cols-2 gap-4">
                       {featuredProject.results.map((result, index) => (
                         <div key={index}>
-                          <p className="text-2xl font-bold text-accent dark:text-accent-light">
+                          <p className="text-2xl font-bold text-[#0D5C63] dark:text-[#0D5C63]">
                             {result.value}
                           </p>
                           <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -125,7 +125,7 @@ export function Portfolio() {
                       href={featuredProject.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-accent dark:text-accent-light hover:underline"
+                      className="inline-flex items-center text-[#0D5C63] dark:text-[#0D5C63] hover:underline"
                     >
                       View Full Case Study
                       <ExternalLink className="w-4 h-4 ml-1" />

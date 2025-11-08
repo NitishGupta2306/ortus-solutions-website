@@ -14,14 +14,14 @@ export function Hero() {
       {/* 3D Particle Background with simple fallback - NO glowy circles */}
       <Suspense
         fallback={
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-accent-subtle dark:from-slate-950 dark:via-slate-900 dark:to-slate-800" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F4FAFF] via-[#96897B]/20 to-[#0D5C63]/30 dark:from-[#040303] dark:via-[#0D5C63]/30 dark:to-[#040303]" />
         }
       >
         <HeroBackground3D />
       </Suspense>
 
       {/* Radial gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-radial from-slate-900/40 via-slate-900/20 to-transparent dark:from-slate-900/60 dark:via-slate-900/30 dark:to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-radial from-[#0D5C63]/40 via-[#0D5C63]/20 to-transparent dark:from-[#040303]/60 dark:via-[#0D5C63]/30 dark:to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
@@ -31,7 +31,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white mb-6 leading-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#040303] dark:text-[#F4FAFF] mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -40,7 +40,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl lg:text-3xl text-slate-700 dark:text-slate-200 font-medium mb-12 max-w-4xl mx-auto"
+            className="text-xl md:text-2xl lg:text-3xl text-[#0D5C63] dark:text-[#96897B] font-medium mb-12 max-w-4xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}

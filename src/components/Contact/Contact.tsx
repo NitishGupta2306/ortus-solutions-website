@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, RESPONSE_TIME, SOCIAL_LINKS } from '@/utils/constants'
 
 export function Contact() {
   return (
-    <Section id="contact" className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 dark:from-blue-800 dark:via-indigo-800 dark:to-blue-900">
+    <Section id="contact" className="relative overflow-hidden bg-gradient-to-br from-[#0D5C63] via-[#931F1D] to-[#0D5C63] dark:from-[#040303] dark:via-[#0D5C63] dark:to-[#040303]">
       {/* Gradient Overlay Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_40%)]" />

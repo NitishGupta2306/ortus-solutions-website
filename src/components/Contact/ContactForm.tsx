@@ -5,6 +5,7 @@ import { contactFormSchema, ContactFormData } from '@/utils/validation'
 import { Button } from '@/components/common/Button'
 import { CheckCircle, XCircle, Loader2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 export function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -18,14 +19,31 @@ export function ContactForm() {
     resolver: zodResolver(contactFormSchema),
   })
 
-  const onSubmit = async (_data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     setSubmitStatus('loading')
 
     try {
-      // TODO: Implement actual form submission (EmailJS, Formspree, or custom API)
-      // For now, data is unused until we implement the actual submission
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please set up your environment variables.')
+      }
+
+      // Send email using EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          company: data.company || 'Not provided',
+          message: data.message,
+          to_email: 'nitish@ortus-solutions.com',
+        },
+        publicKey
+      )
 
       setSubmitStatus('success')
       reset()
@@ -56,7 +74,7 @@ export function ContactForm() {
           id="name"
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? 'name-error' : undefined}
-          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-blue-100 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-[#96897B] focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
           placeholder="Your name"
         />
         {errors.name && (
@@ -77,7 +95,7 @@ export function ContactForm() {
           id="email"
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? 'email-error' : undefined}
-          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-blue-100 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-[#96897B] focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
           placeholder="your.email@example.com"
         />
         {errors.email && (
@@ -90,13 +108,13 @@ export function ContactForm() {
       {/* Company (Optional) */}
       <div>
         <label htmlFor="company" className="block text-sm font-semibold text-white mb-2">
-          Company <span className="text-blue-100">(optional)</span>
+          Company <span className="text-[#96897B]">(optional)</span>
         </label>
         <input
           {...register('company')}
           type="text"
           id="company"
-          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-blue-100 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-[#96897B] focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200"
           placeholder="Your company"
         />
       </div>
@@ -112,7 +130,7 @@ export function ContactForm() {
           rows={5}
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? 'message-error' : undefined}
-          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-blue-100 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200 resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-[#96897B] focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-200 resize-none"
           placeholder="Tell me about your project and what you need help with..."
         />
         {errors.message && (
@@ -126,7 +144,7 @@ export function ContactForm() {
       <Button
         type="submit"
         size="lg"
-        className="w-full relative overflow-hidden bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200"
+        className="w-full relative overflow-hidden bg-[#0D5C63] hover:bg-[#931F1D] text-white font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-200"
         isLoading={submitStatus === 'loading'}
         disabled={submitStatus === 'loading'}
       >

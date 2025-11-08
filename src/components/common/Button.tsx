@@ -25,11 +25,11 @@ export function Button({
   `
 
   const variants = {
-    primary: 'bg-accent hover:bg-accent-dark text-white shadow-md hover:shadow-lg',
+    primary: 'bg-[#0D5C63] hover:bg-[#931F1D] text-white shadow-md hover:shadow-lg',
     secondary:
       'bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-900 dark:text-slate-100',
     outline:
-      'border-2 border-accent text-accent hover:bg-accent hover:text-white dark:border-accent-light dark:text-accent-light',
+      'border-2 border-[#0D5C63] text-[#0D5C63] hover:bg-[#0D5C63] hover:text-white dark:border-[#0D5C63] dark:text-[#0D5C63]',
   }
 
   const sizes = {

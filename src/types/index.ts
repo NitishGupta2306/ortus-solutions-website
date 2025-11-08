@@ -82,6 +82,7 @@ export interface SocialLinks {
   twitter?: string
   medium?: string
   email?: string
+  portfolio?: string
 }
 
 export interface TeamMember {

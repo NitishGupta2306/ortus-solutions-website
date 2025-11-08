@@ -6,15 +6,15 @@ export const SITE_DESCRIPTION =
   'Three senior data engineers specializing in building scalable data pipelines and automation solutions.'
 
 // Contact
-export const CONTACT_EMAIL = 'contact@ortussolutions.com' // Update with your actual email
+export const CONTACT_EMAIL = 'nitish@ortus-solutions.com'
 export const RESPONSE_TIME = '24 hours'
 
-// Social Media (Update with your actual links)
+// Social Media
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/in/yourprofile',
-  github: 'https://github.com/yourusername',
+  linkedin: 'https://www.linkedin.com/in/nitish2306/',
+  github: 'https://github.com/NitishGupta2306',
   twitter: 'https://twitter.com/yourhandle',
-  email: 'contact@ortussolutions.com',
+  email: 'nitish@ortus-solutions.com',
 }
 
 // Navigation - ordered to match actual page flow

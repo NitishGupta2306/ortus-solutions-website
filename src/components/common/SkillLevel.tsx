@@ -6,9 +6,9 @@ interface SkillLevelProps {
 }
 
 const levelConfig = {
-  beginner: { dots: 1, color: 'bg-slate-400', label: 'Beginner' },
-  intermediate: { dots: 2, color: 'bg-blue-500', label: 'Intermediate' },
-  advanced: { dots: 3, color: 'bg-purple-500', label: 'Advanced' },
+  beginner: { dots: 1, color: 'bg-[#96897B]', label: 'Beginner' },
+  intermediate: { dots: 2, color: 'bg-[#0D5C63]', label: 'Intermediate' },
+  advanced: { dots: 3, color: 'bg-[#931F1D]', label: 'Advanced' },
   expert: { dots: 4, color: 'bg-accent', label: 'Expert' }
 }
 

@@ -54,7 +54,7 @@ export function CompanyAbout() {
           {/* Header */}
           <SlideUp>
             <div className="text-center mb-12">
-              <p className="text-accent dark:text-accent-light font-semibold text-sm mb-2 uppercase tracking-wide">
+              <p className="text-[#0D5C63] dark:text-[#0D5C63] font-semibold text-sm mb-2 uppercase tracking-wide">
                 About Us
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-4">
@@ -71,7 +71,7 @@ export function CompanyAbout() {
             <ul className="grid md:grid-cols-2 gap-4">
               {companyInfo.description.map((point, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent dark:text-accent-light flex-shrink-0 mt-1" />
+                  <CheckCircle2 className="w-5 h-5 text-[#0D5C63] dark:text-[#0D5C63] flex-shrink-0 mt-1" />
                   <span className="text-slate-700 dark:text-slate-300 text-base leading-relaxed">
                     {point}
                   </span>
@@ -82,9 +82,9 @@ export function CompanyAbout() {
 
           {/* Company Stats */}
           <SlideUp delay={0.4}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 p-8 bg-gradient-to-br from-accent/5 to-accent-light/5 dark:from-accent/10 dark:to-accent-light/10 rounded-2xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 p-8 bg-gradient-to-br from-[#0D5C63]/5 to-[#96897B]/5 dark:from-[#0D5C63]/10 dark:to-[#96897B]/10 rounded-2xl">
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-accent dark:text-accent-light">
+                <p className="text-3xl md:text-4xl font-bold text-[#0D5C63] dark:text-[#0D5C63]">
                   <AnimatedCounter end={companyInfo.stats.totalExperience} suffix="+" />
                 </p>
                 <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-1">
@@ -92,7 +92,7 @@ export function CompanyAbout() {
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-accent dark:text-accent-light">
+                <p className="text-3xl md:text-4xl font-bold text-[#0D5C63] dark:text-[#0D5C63]">
                   <AnimatedCounter end={companyInfo.stats.projectsCompleted} suffix="+" />
                 </p>
                 <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-1">
@@ -100,7 +100,7 @@ export function CompanyAbout() {
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-accent dark:text-accent-light">
+                <p className="text-3xl md:text-4xl font-bold text-[#0D5C63] dark:text-[#0D5C63]">
                   <AnimatedCounter end={companyInfo.stats.industriesServed} suffix="+" />
                 </p>
                 <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-1">
@@ -108,7 +108,7 @@ export function CompanyAbout() {
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-accent dark:text-accent-light">
+                <p className="text-3xl md:text-4xl font-bold text-[#0D5C63] dark:text-[#0D5C63]">
                   <AnimatedCounter end={companyInfo.stats.happyClients} suffix="+" />
                 </p>
                 <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-1">

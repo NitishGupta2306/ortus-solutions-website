@@ -47,7 +47,7 @@ function ValueCard({ value, index }: ValueCardProps) {
 
                 {/* Icon */}
                 <div className="mb-4">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-accent to-accent-light flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-[#0D5C63] to-[#96897B] flex items-center justify-center">
                     <Icon className="w-7 h-7 text-white" />
                   </div>
                 </div>
@@ -56,7 +56,7 @@ function ValueCard({ value, index }: ValueCardProps) {
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                   {value.title}
                 </h3>
-                <p className="text-accent dark:text-accent-light font-medium text-base italic min-h-[3rem]">
+                <p className="text-[#0D5C63] dark:text-[#0D5C63] font-medium text-base italic min-h-[3rem]">
                   {value.subtitle}
                 </p>
 
@@ -82,7 +82,7 @@ function ValueCard({ value, index }: ValueCardProps) {
               <div className="flex flex-col h-full p-6">
                 {/* Title on Back */}
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-8 h-8 rounded-md bg-gradient-to-br from-accent to-accent-light flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-md bg-gradient-to-br from-[#0D5C63] to-[#96897B] flex items-center justify-center flex-shrink-0">
                     <Icon className="w-4 h-4 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
@@ -95,7 +95,7 @@ function ValueCard({ value, index }: ValueCardProps) {
                   <ul className="space-y-2">
                     {value.points.map((point, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-accent dark:text-accent-light flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#0D5C63] dark:text-[#0D5C63] flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-slate-600 dark:text-slate-300 leading-snug">
                           {point}
                         </span>
@@ -131,12 +131,12 @@ export function CoreValues() {
           </SectionHeading>
 
           {/* Quote Badge */}
-          <div className="max-w-4xl mx-auto mb-8 p-4 border-2 border-accent/30 dark:border-accent-light/30 rounded-xl">
+          <div className="max-w-4xl mx-auto mb-8 p-4 border-2 border-[#0D5C63]/30 dark:border-[#0D5C63]-light/30 rounded-xl">
             <p className="font-sans text-lg md:text-xl text-slate-700 dark:text-slate-100 text-center italic mb-2">
-              "<span className="font-bold text-accent dark:text-accent-light">Excellence</span> is what we{' '}
-              <span className="font-bold text-accent dark:text-accent-light">strive</span> for.{' '}
-              <span className="font-bold text-accent dark:text-accent-light">Integrity</span> is what we{' '}
-              <span className="font-bold text-accent dark:text-accent-light">stand</span> for."
+              "<span className="font-bold text-[#0D5C63] dark:text-[#0D5C63]">Excellence</span> is what we{' '}
+              <span className="font-bold text-[#0D5C63] dark:text-[#0D5C63]">strive</span> for.{' '}
+              <span className="font-bold text-[#0D5C63] dark:text-[#0D5C63]">Integrity</span> is what we{' '}
+              <span className="font-bold text-[#0D5C63] dark:text-[#0D5C63]">stand</span> for."
             </p>
             <p className="font-sans text-xs text-slate-500 dark:text-slate-400 text-center">
               — Nitish Gupta, Founding Engineer

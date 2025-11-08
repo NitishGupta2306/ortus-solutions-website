@@ -10,26 +10,26 @@ interface BlobShapeProps {
   scale?: number
 }
 
-// Map of color names to hex values - Professional blue theme
+// Map of color names to hex values - Custom palette theme
 const colorMap: Record<string, string> = {
-  'blue-300': '#93C5FD',
-  'blue-400': '#60A5FA',
-  'blue-500': '#3B82F6',
-  'blue-600': '#2563EB',
-  'blue-700': '#1D4ED8',
-  'indigo-300': '#A5B4FC',
-  'indigo-400': '#818CF8',
-  'indigo-500': '#6366F1',
-  'indigo-600': '#4F46E5',
-  'sky-300': '#7DD3FC',
-  'sky-400': '#38BDF8',
-  'sky-500': '#0EA5E9',
-  'sky-600': '#0284C7',
+  'teal-300': '#2D9DA8',
+  'teal-400': '#1D8D98',
+  'teal-500': '#0D5C63',
+  'teal-600': '#0A4A4F',
+  'teal-700': '#073A3E',
+  'red-300': '#C04745',
+  'red-400': '#A83735',
+  'red-500': '#931F1D',
+  'red-600': '#7A1917',
+  'taupe-300': '#B5A899',
+  'taupe-400': '#A5988A',
+  'taupe-500': '#96897B',
+  'taupe-600': '#7A6F63',
 }
 
 export function BlobShape({
-  colorStart = 'blue-400',
-  colorEnd = 'blue-600',
+  colorStart = 'teal-400',
+  colorEnd = 'teal-600',
   className = '',
   breathing = true,
   scale = 1
@@ -89,8 +89,8 @@ export function BlobShape({
       >
         <defs>
           <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={colorMap[colorStart] || '#60A5FA'} />
-            <stop offset="100%" stopColor={colorMap[colorEnd] || '#2563EB'} />
+            <stop offset="0%" stopColor={colorMap[colorStart] || '#0D5C63'} />
+            <stop offset="100%" stopColor={colorMap[colorEnd] || '#0A4A4F'} />
           </linearGradient>
         </defs>
         <path

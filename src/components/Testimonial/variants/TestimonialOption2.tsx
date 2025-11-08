@@ -16,7 +16,7 @@ export function TestimonialOption2() {
             <img
               src={testimonial.image}
               alt={testimonial.author}
-              className="w-24 h-24 rounded-full object-cover mx-auto mb-6 border-4 border-accent/20"
+              className="w-24 h-24 rounded-full object-cover mx-auto mb-6 border-4 border-[#0D5C63]/20"
             />
             <div className="flex justify-center gap-1 mb-4">
               {[...Array(5)].map((_, i) => (
@@ -29,7 +29,7 @@ export function TestimonialOption2() {
               "{testimonial.quote}"
             </p>
             <p className="font-bold text-slate-900 dark:text-slate-100">{testimonial.author}</p>
-            <p className="text-sm text-accent dark:text-accent-light">{testimonial.title}, {testimonial.company}</p>
+            <p className="text-sm text-[#0D5C63] dark:text-[#0D5C63]">{testimonial.title}, {testimonial.company}</p>
           </div>
         </SlideUp>
       </Container>

@@ -9,25 +9,25 @@ const techStacks = [
     name: 'Modern Web Apps',
     description: 'Fast, responsive, production-ready',
     technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind'],
-    gradient: 'from-blue-600 to-indigo-500',
+    gradient: 'from-[#0D5C63] to-[#96897B]',
   },
   {
     name: 'Data Pipelines',
     description: 'Scalable automation & analytics',
     technologies: ['Python', 'Pandas', 'FastAPI', 'PostgreSQL', 'AWS S3'],
-    gradient: 'from-indigo-600 to-blue-500',
+    gradient: 'from-[#96897B] to-[#0D5C63]',
   },
   {
     name: 'Cloud Infrastructure',
     description: 'Secure, scalable deployment',
     technologies: ['Docker', 'AWS/GCP', 'GitHub Actions', 'Terraform', 'Nginx'],
-    gradient: 'from-sky-600 to-blue-500',
+    gradient: 'from-[#96897B] to-[#0D5C63]',
   },
   {
     name: 'AI Integration',
     description: 'Smart features, real insights',
     technologies: ['OpenAI', 'LangChain', 'Vector DBs', 'RAG', 'Fine-tuning'],
-    gradient: 'from-blue-500 to-indigo-400',
+    gradient: 'from-[#0D5C63] to-[#96897B]',
   },
 ]
 
@@ -48,7 +48,7 @@ export function TechStack() {
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {techStacks.map((stack, index) => (
             <SlideUp key={stack.name} delay={0.1 + index * 0.1}>
-              <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border-2 border-transparent hover:border-accent/30 transition-all hover:scale-105 hover:shadow-2xl">
+              <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border-2 border-transparent hover:border-[#0D5C63]/30 transition-all hover:scale-105 hover:shadow-2xl">
                 {/* Gradient top bar */}
                 <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${stack.gradient} rounded-t-2xl`} />
 
@@ -82,7 +82,7 @@ export function TechStack() {
         <SlideUp delay={0.5}>
           <div className="mt-12 text-center max-w-2xl mx-auto">
             <p className="text-lg text-slate-700 dark:text-slate-200 font-medium">
-              Every project is unique. We pick the right tools for <span className="text-accent dark:text-accent-light font-bold">your</span> goals.
+              Every project is unique. We pick the right tools for <span className="text-[#0D5C63] dark:text-[#0D5C63] font-bold">your</span> goals.
             </p>
           </div>
         </SlideUp>

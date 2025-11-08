@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from './Button'
-import { ThemeToggle } from './ThemeToggle'
 import { NAV_ITEMS, SITE_NAME } from '@/utils/constants'
 import { cn } from '@/utils/cn'
 import { scrollToSection as scrollToSectionUtil } from '@/utils/navigation'
@@ -89,7 +88,7 @@ export function Header() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-300',
           isScrolled
-            ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-sm'
+            ? 'bg-[#F4FAFF]/80 dark:bg-[#040303]/80 backdrop-blur-lg shadow-sm'
             : 'bg-transparent'
         )}
       >
@@ -98,7 +97,7 @@ export function Header() {
             {/* Logo */}
             <button
               onClick={() => scrollToSection('#hero')}
-              className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-100 hover:text-accent dark:hover:text-accent-light transition-colors"
+              className="text-xl md:text-2xl font-bold text-[#040303] dark:text-[#F4FAFF] hover:text-[#0D5C63] dark:hover:text-[#0D5C63] transition-colors"
               aria-label="Return to top of page"
             >
               {SITE_NAME}
@@ -110,27 +109,25 @@ export function Header() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-slate-700 dark:text-slate-300 hover:text-accent dark:hover:text-accent-light transition-colors font-medium"
+                  className="text-[#040303] dark:text-[#96897B] hover:text-[#0D5C63] dark:hover:text-[#0D5C63] transition-colors font-medium"
                 >
                   {item.label}
                 </button>
               ))}
             </div>
 
-            {/* Right side: Theme Toggle + CTA */}
-            <div className="hidden md:flex items-center space-x-4">
-              <ThemeToggle />
+            {/* Right side: CTA */}
+            <div className="hidden md:flex items-center">
               <Button onClick={() => scrollToSection('#contact')} size="sm">
                 Book Consultation
               </Button>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex md:hidden items-center space-x-2">
-              <ThemeToggle />
+            <div className="flex md:hidden items-center">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 text-slate-700 dark:text-slate-300 hover:text-accent dark:hover:text-accent-light transition-colors"
+                className="p-2 text-slate-700 dark:text-slate-300 hover:text-[#0D5C63] dark:hover:text-[#0D5C63]-light transition-colors"
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -156,7 +153,7 @@ export function Header() {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-lg text-slate-700 dark:text-slate-300 hover:text-accent dark:hover:text-accent-light transition-colors py-2"
+                  className="text-left text-lg text-slate-700 dark:text-slate-300 hover:text-[#0D5C63] dark:hover:text-[#0D5C63]-light transition-colors py-2"
                 >
                   {item.label}
                 </button>

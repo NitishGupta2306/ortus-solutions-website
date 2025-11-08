@@ -5,33 +5,47 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',
+  safelist: [
+    'bg-accent',
+    'bg-accent-dark',
+    'text-accent',
+    'text-accent-light',
+    'border-accent',
+    'border-accent-light',
+    'hover:bg-accent',
+    'hover:bg-accent-dark',
+    'dark:text-accent-light',
+    'dark:border-accent-light',
+  ],
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0F172A',
-          light: '#1E293B',
+          DEFAULT: '#040303', // Almost black
+          light: '#0D5C63',   // Teal
         },
         accent: {
-          DEFAULT: '#3B82F6', // blue-500 (professional blue)
-          light: '#60A5FA',   // blue-400 (bright blue)
-          dark: '#1E40AF',    // blue-800 (deep navy)
-          subtle: '#EFF6FF',  // blue-50
+          DEFAULT: '#0D5C63', // Teal (main accent)
+          light: '#F4FAFF',   // Light blue/white
+          dark: '#040303',    // Almost black
+          subtle: '#F4FAFF',  // Light blue/white
+          red: '#931F1D',     // Dark red accent
+          taupe: '#96897B',   // Taupe/beige
         },
         error: {
-          DEFAULT: '#DC2626', // red-600
-          light: '#F87171', // red-400
-          bg: '#FEF2F2', // red-50
-          'bg-dark': '#7F1D1D', // red-900
+          DEFAULT: '#931F1D', // Dark red
+          light: '#DC2626',   // Lighter red
+          bg: '#FEF2F2',      // Light red bg
+          'bg-dark': '#7F1D1D',
         },
         success: {
-          DEFAULT: '#16A34A', // green-600
-          light: '#4ADE80', // green-400
-          bg: '#F0FDF4', // green-50
-          'bg-dark': '#14532D', // green-900
+          DEFAULT: '#0D5C63', // Teal for success
+          light: '#4ADE80',
+          bg: '#F0FDF4',
+          'bg-dark': '#14532D',
         },
         warning: {
-          DEFAULT: '#FBBF24', // yellow-400 (for sun icon)
+          DEFAULT: '#96897B', // Taupe for warnings
         },
       },
       fontFamily: {

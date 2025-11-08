@@ -5,7 +5,7 @@
 // Particle system configuration
 export const PARTICLE_COUNT = 2500 // Even more particles for better visibility
 export const PARTICLE_SPHERE_RADIUS = 5
-export const PARTICLE_COLOR = '#3B82F6' // Professional blue for visibility
+export const PARTICLE_COLOR = '#0D5C63' // Teal for visibility
 export const PARTICLE_SIZE = 0.05 // Larger particles
 export const PARTICLE_OPACITY = 0.9 // Very high opacity
 
@@ -23,8 +23,8 @@ export const CAMERA_FOV = 75
 export const CAMERA_POSITION: [number, number, number] = [0, 0, 3]
 export const FOG_NEAR = 3
 export const FOG_FAR = 8
-export const FOG_COLOR_LIGHT = '#ffffff'
-export const FOG_COLOR_DARK = '#0F172A'
+export const FOG_COLOR_LIGHT = '#F4FAFF'
+export const FOG_COLOR_DARK = '#040303'
 
 // Performance
 export const CANVAS_DPR: [number, number] = [1, 2] // min, max pixel ratio

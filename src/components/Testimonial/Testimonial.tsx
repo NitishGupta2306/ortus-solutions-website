@@ -22,7 +22,7 @@ export function Testimonial() {
               />
             </div>
             <div className="flex-1">
-              <Quote className="w-12 h-12 text-accent/30 mb-4" />
+              <Quote className="w-12 h-12 text-[#0D5C63]/30 mb-4" />
               <div className="text-lg text-slate-600 dark:text-slate-300 mb-6 space-y-4">
                 {testimonial.quote.split('\n\n').map((paragraph, index) => (
                   <p

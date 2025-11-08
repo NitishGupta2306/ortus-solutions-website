@@ -8,17 +8,17 @@ interface AnimatedBackgroundProps {
 }
 
 export function AnimatedBackground({ variant = 'subtle' }: AnimatedBackgroundProps) {
-  // Different orb colors based on variant - Professional blue theme
+  // Different orb colors based on variant - Custom palette theme
   const orbColors = variant === 'dark'
     ? {
-        orb1: 'from-blue-500/60 to-indigo-500/60',
-        orb2: 'from-indigo-600/50 to-blue-600/50',
-        orb3: 'from-sky-500/45 to-blue-500/45',
+        orb1: 'from-[#0D5C63]/60 to-[#931F1D]/60',
+        orb2: 'from-[#931F1D]/50 to-[#0D5C63]/50',
+        orb3: 'from-[#96897B]/45 to-[#0D5C63]/45',
       }
     : {
-        orb1: 'from-blue-300/50 to-indigo-300/50',
-        orb2: 'from-indigo-300/45 to-sky-300/45',
-        orb3: 'from-blue-200/40 to-indigo-200/40',
+        orb1: 'from-[#0D5C63]/50 to-[#96897B]/50',
+        orb2: 'from-[#96897B]/45 to-[#0D5C63]/45',
+        orb3: 'from-[#0D5C63]/40 to-[#931F1D]/40',
       }
 
   return (

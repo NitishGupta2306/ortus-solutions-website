@@ -20,7 +20,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors">
+      <div className="min-h-screen bg-[#F4FAFF] dark:bg-[#040303] transition-colors">
         <Header />
 
         <main id="main-content">
