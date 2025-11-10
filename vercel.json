@@ -1,23 +1,14 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/bni-analysis-deira-dubai",
-      "destination": "https://bni-analysis-deira-dubai.vercel.app"
+      "destination": "https://bni-analysis-deira-dubai.vercel.app",
+      "permanent": false
     },
     {
       "source": "/bni-analysis-deira-dubai/:path*",
-      "destination": "https://bni-analysis-deira-dubai.vercel.app/:path*"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/bni-analysis-deira-dubai/:path*",
-      "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        }
-      ]
+      "destination": "https://bni-analysis-deira-dubai.vercel.app/:path*",
+      "permanent": false
     }
   ]
 }
