@@ -19,12 +19,12 @@ export const SOCIAL_LINKS = {
 
 // Navigation - ordered to match actual page flow
 export const NAV_ITEMS = [
-  { label: 'Values', href: '#values' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'About', href: '#about' },
-  { label: 'Team', href: '#team' },
-  { label: 'Process', href: '#process' },
   { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Process', href: '#process' },
+  { label: 'About', href: '#about' },
+  { label: 'Values', href: '#values' },
+  { label: 'Team', href: '#team' },
   { label: 'Contact', href: '#contact' },
 ]
 

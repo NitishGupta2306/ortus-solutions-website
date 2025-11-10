@@ -119,7 +119,7 @@ function ValueCard({ value, index }: ValueCardProps) {
 
 export function CoreValues() {
   return (
-    <Section id="values" background="dark" className="py-16">
+    <Section id="values" background="white" className="py-16">
       <Container>
         <SlideUp>
           <SectionHeading

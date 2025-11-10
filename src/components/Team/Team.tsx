@@ -7,7 +7,7 @@ import { teamMembers } from '@/data/team'
 
 export function Team() {
   return (
-    <Section id="team" background="dark">
+    <Section id="team" background="subtle">
       <Container>
         <SlideUp>
           <SectionHeading

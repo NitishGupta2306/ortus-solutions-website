@@ -25,14 +25,14 @@ function App() {
 
         <main id="main-content">
           <Hero /> {/* Gradient/Particles */}
-          <CoreValues /> {/* dark (slate-950) */}
-          <Testimonial /> {/* white */}
-          <Projects /> {/* subtle (slate-50) */}
-          <CompanyAbout /> {/* white */}
-          <Team /> {/* subtle (slate-50) */}
-          <Process /> {/* white - CHANGED */}
-          <TechStack /> {/* subtle (slate-50) - CHANGED */}
-          <Services /> {/* white - CHANGED */}
+          <Services /> {/* white - What we do */}
+          <Projects /> {/* dark - Showcase work */}
+          <Process /> {/* white - How we work */}
+          <CompanyAbout /> {/* subtle (slate-50) - Company story */}
+          <CoreValues /> {/* white - Core values */}
+          <Team /> {/* subtle (slate-50) - Meet the team */}
+          <TechStack /> {/* white - Technical credibility */}
+          <Testimonial /> {/* subtle (slate-50) - Social proof */}
           <Contact /> {/* Gradient CTA */}
         </main>
 
