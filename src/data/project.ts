@@ -66,7 +66,7 @@ export const projects: Project[] = [
       '/images/projects/bni-executive-dashboard.png',
       '/images/projects/bni-chapter-dashboard.png',
     ],
-    link: '', // Private client platform
+    link: '/bni-analysis-deira-dubai',
     github: '', // Private client project
     teamMemberIds: ['member-1'],
   },

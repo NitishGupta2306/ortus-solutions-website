@@ -231,11 +231,11 @@ export const ProjectCard = memo(function ProjectCard({ project }: ProjectCardPro
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-[#0D5C63] dark:text-[#0D5C63] hover:underline"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#0D5C63] to-[#931F1D] text-white rounded-lg font-semibold hover:shadow-lg transition-all"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    View Full Case Study
-                    <ExternalLink className="w-3 h-3 ml-1" />
+                    Login to BNI Analysis
+                    <ExternalLink className="w-4 h-4" />
                   </a>
                 )}
                   </div>
