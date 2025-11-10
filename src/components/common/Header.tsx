@@ -93,23 +93,23 @@ export function Header() {
         )}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-16 md:h-20 gap-4">
             {/* Logo */}
             <button
               onClick={() => scrollToSection('#hero')}
-              className="text-xl md:text-2xl font-bold text-[#040303] dark:text-[#F4FAFF] hover:text-[#0D5C63] dark:hover:text-[#0D5C63] transition-colors"
+              className="text-lg md:text-xl font-bold text-[#040303] dark:text-[#F4FAFF] hover:text-[#0D5C63] dark:hover:text-[#0D5C63] transition-colors whitespace-nowrap flex-shrink-0"
               aria-label="Return to top of page"
             >
               {SITE_NAME}
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
               {NAV_ITEMS.map(item => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-[#040303] dark:text-[#96897B] hover:text-[#0D5C63] dark:hover:text-[#0D5C63] transition-colors font-medium"
+                  className="text-sm text-[#040303] dark:text-[#96897B] hover:text-[#0D5C63] dark:hover:text-[#0D5C63] transition-colors font-medium whitespace-nowrap"
                 >
                   {item.label}
                 </button>
@@ -117,22 +117,22 @@ export function Header() {
             </div>
 
             {/* Right side: CTA */}
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
               <a
                 href="/bni-analysis-deira-dubai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-sm font-semibold bg-gradient-to-r from-[#0D5C63] to-[#931F1D] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all"
+                className="px-3 py-2 text-xs font-semibold bg-gradient-to-r from-[#0D5C63] to-[#931F1D] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all whitespace-nowrap"
               >
-                Login to BNI Analysis
+                BNI Login
               </a>
               <Button onClick={() => scrollToSection('#contact')} size="sm" variant="outline">
-                Book Consultation
+                Contact
               </Button>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="flex md:hidden items-center">
+            <div className="flex lg:hidden items-center">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="p-2 text-slate-700 dark:text-slate-300 hover:text-[#0D5C63] dark:hover:text-[#0D5C63]-light transition-colors"
@@ -147,7 +147,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
+        <div className="fixed inset-0 z-40 lg:hidden">
           <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMobileMenuOpen(false)}
