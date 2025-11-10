@@ -1,6 +1,5 @@
 import { Section } from '@/components/common/Section'
 import { Container } from '@/components/common/Container'
-import { SectionHeading } from '@/components/common/SectionHeading'
 import { SlideUp } from '@/components/common/SlideUp'
 import { projects } from '@/data/project'
 import { ProjectCard } from './ProjectCard'

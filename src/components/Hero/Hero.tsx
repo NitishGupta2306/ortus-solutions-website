@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '@/components/common/Button'
-import { TypingAnimation } from '@/components/common/TypingAnimation'
-import { companyInfo } from '@/data/company'
 import { scrollToSection } from '@/utils/navigation'
 import { HeroBackground3D } from './HeroBackground3D'
 import { Suspense } from 'react'

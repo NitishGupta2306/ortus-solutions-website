@@ -1,7 +1,6 @@
 import { useState, memo } from 'react'
 import { TeamMember } from '@/types'
-import { Card } from '@/components/common/Card'
-import { Linkedin, Github, Twitter, Mail, ArrowLeft } from 'lucide-react'
+import { Linkedin, Github, Twitter, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { handleImageError } from '@/utils/image'
 
