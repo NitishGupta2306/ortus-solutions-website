@@ -13,17 +13,17 @@ export function Testimonial() {
     <Section id="testimonials" background="subtle">
       <Container>
         <SlideUp>
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 flex gap-8 items-center">
-            <div className="flex-shrink-0">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:gap-8 items-start sm:items-center">
+            <div className="flex-shrink-0 mx-auto sm:mx-0">
               <img
                 src={testimonial.image}
                 alt={testimonial.author}
-                className="w-32 h-32 rounded-full object-cover"
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover"
               />
             </div>
-            <div className="flex-1">
-              <Quote className="w-12 h-12 text-[#0D5C63]/30 mb-4" />
-              <div className="text-lg text-slate-600 dark:text-slate-300 mb-6 space-y-4">
+            <div className="flex-1 w-full">
+              <Quote className="w-10 h-10 sm:w-12 sm:h-12 text-[#0D5C63]/30 mb-3 sm:mb-4" />
+              <div className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-4 sm:mb-6 space-y-3 sm:space-y-4">
                 {testimonial.quote.split('\n\n').map((paragraph, index) => (
                   <p
                     key={index}
