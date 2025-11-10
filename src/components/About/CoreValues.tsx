@@ -31,7 +31,7 @@ function ValueCard({ value, index }: ValueCardProps) {
         <motion.div
           className="relative w-full h-full [transform-style:preserve-3d] group"
           animate={{ rotateY: isFlipped ? 180 : 0 }}
-          transition={{ duration: 0.5, type: 'spring', stiffness: 100, damping: 17 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           {/* Front of card */}
           <button

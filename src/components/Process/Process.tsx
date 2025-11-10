@@ -22,7 +22,7 @@ function ProcessCard({ step, index }: ProcessCardProps) {
       <motion.div
         className="relative w-full h-full [transform-style:preserve-3d]"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6, type: 'spring', stiffness: 80, damping: 15 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
       >
         {/* Front of card */}
         <button
