@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/bni-analysis-deira-dubai/:path*",
-      "destination": "https://bni-analysis-deira-dubai.vercel.app/:path*"
+      "source": "/bni-analysis-deira-dubai",
+      "destination": "https://bni-analysis-deira-dubai.vercel.app"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/bni-analysis-deira-dubai/:path*",
+      "destination": "https://bni-analysis-deira-dubai.vercel.app/:path*"
     }
   ]
 }
