@@ -66,7 +66,7 @@ export const projects: Project[] = [
       '/images/projects/bni-executive-dashboard.png',
       '/images/projects/bni-chapter-dashboard.png',
     ],
-    link: 'https://bni-analysis-deira-dubai.vercel.app',
+    link: '/bni-analysis-deira-dubai',
     github: '', // Private client project
     teamMemberIds: ['member-1'],
   },

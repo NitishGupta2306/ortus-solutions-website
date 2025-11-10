@@ -119,7 +119,7 @@ export function Header() {
             {/* Right side: CTA */}
             <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
               <a
-                href="https://bni-analysis-deira-dubai.vercel.app"
+                href="/bni-analysis-deira-dubai"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -169,7 +169,7 @@ export function Header() {
               ))}
               <div className="pt-4 border-t border-slate-200 dark:border-slate-700 space-y-3">
                 <a
-                  href="https://bni-analysis-deira-dubai.vercel.app"
+                  href="/bni-analysis-deira-dubai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
