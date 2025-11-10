@@ -23,11 +23,9 @@ export const NAV_ITEMS = [
   { label: 'Projects', href: '#projects' },
   { label: 'Process', href: '#process' },
   { label: 'About', href: '#about' },
-  { label: 'Values', href: '#values' },
   { label: 'Team', href: '#team' },
   { label: 'Tech Stack', href: '#tech-stack' },
   { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
 ]
 
 // Layout constants
