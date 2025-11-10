@@ -117,16 +117,17 @@ export function Header() {
             </div>
 
             {/* Right side: CTA */}
-            <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
+            <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
               <a
                 href="/bni-analysis-deira-dubai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-2 text-xs font-semibold bg-gradient-to-r from-[#0D5C63] to-[#931F1D] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all whitespace-nowrap"
               >
-                BNI Login
+                <Button size="sm" className="whitespace-nowrap">
+                  BNI Login
+                </Button>
               </a>
-              <Button onClick={() => scrollToSection('#contact')} size="sm" variant="outline">
+              <Button onClick={() => scrollToSection('#contact')} size="sm">
                 Contact
               </Button>
             </div>
@@ -171,16 +172,17 @@ export function Header() {
                   href="/bni-analysis-deira-dubai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-3 text-center font-semibold bg-gradient-to-r from-[#0D5C63] to-[#931F1D] text-white rounded-lg hover:shadow-lg transition-all"
+                  className="block"
                 >
-                  Login to BNI Analysis
+                  <Button className="w-full">
+                    BNI Login
+                  </Button>
                 </a>
                 <Button
                   onClick={() => scrollToSection('#contact')}
                   className="w-full"
-                  variant="outline"
                 >
-                  Book Consultation
+                  Contact
                 </Button>
               </div>
             </div>
