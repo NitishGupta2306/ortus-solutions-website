@@ -25,6 +25,8 @@ export const NAV_ITEMS = [
   { label: 'About', href: '#about' },
   { label: 'Values', href: '#values' },
   { label: 'Team', href: '#team' },
+  { label: 'Tech Stack', href: '#tech-stack' },
+  { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ]
 

@@ -122,11 +122,11 @@ export function Header() {
                 href="/bni-analysis-deira-dubai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-[#0D5C63] hover:text-[#931F1D] transition-colors"
+                className="px-4 py-2 text-sm font-semibold bg-gradient-to-r from-[#0D5C63] to-[#931F1D] text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all"
               >
                 Login to BNI Analysis
               </a>
-              <Button onClick={() => scrollToSection('#contact')} size="sm">
+              <Button onClick={() => scrollToSection('#contact')} size="sm" variant="outline">
                 Book Consultation
               </Button>
             </div>
@@ -171,13 +171,14 @@ export function Header() {
                   href="/bni-analysis-deira-dubai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-2 text-center text-[#0D5C63] hover:text-[#931F1D] transition-colors font-medium border border-[#0D5C63] rounded-lg"
+                  className="block w-full py-3 text-center font-semibold bg-gradient-to-r from-[#0D5C63] to-[#931F1D] text-white rounded-lg hover:shadow-lg transition-all"
                 >
                   Login to BNI Analysis
                 </a>
                 <Button
                   onClick={() => scrollToSection('#contact')}
                   className="w-full"
+                  variant="outline"
                 >
                   Book Consultation
                 </Button>

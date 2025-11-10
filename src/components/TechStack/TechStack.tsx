@@ -33,7 +33,7 @@ const techStacks = [
 
 export function TechStack() {
   return (
-    <Section background="white">
+    <Section id="tech-stack" background="white">
       <Container>
         <SlideUp>
           <SectionHeading

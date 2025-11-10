@@ -10,7 +10,7 @@ import { testimonial } from '@/data/testimonial'
  */
 export function Testimonial() {
   return (
-    <Section background="subtle">
+    <Section id="testimonials" background="subtle">
       <Container>
         <SlideUp>
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 flex gap-8 items-center">
